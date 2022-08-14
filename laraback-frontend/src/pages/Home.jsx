@@ -5,7 +5,17 @@ import {GiTakeMyMoney} from "react-icons/gi"
 import {FaMoneyBillAlt} from "react-icons/fa"
 import FunctionalityCard from "../components/FunctionalityCard";
 import AuthForm from "../components/AuthForm";
+import BlackFridayImage from "../assets/blackblow.png"
+import Slider from "react-slick";
+import SliderComponent from "../components/SliderComponent";
 
+var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
 const functionalities=[
     {
         title:"Browse",
@@ -28,6 +38,8 @@ const functionalities=[
         icon:   <FaMoneyBillAlt className="text-3xl m-auto   bg-clip-text bg-gradient-to-r from-orange-400 to-purple-800" />
     }
 ]
+
+
 function Home() {
   return (
     <h1 className=" bg-orange-50  min-h-screen">
@@ -55,6 +67,16 @@ function Home() {
 
       {/* <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 320"><path fill="rgb(233 213 255)" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,266.7C960,224,1200,128,1320,80L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> */}
       <svg className="absolute bottom-0 z-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(233 213 255)" fill-opacity="1" d="M0,224L48,234.7C96,245,192,267,288,282.7C384,299,480,309,576,288C672,267,768,213,864,197.3C960,181,1056,203,1152,176C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+      <div className="flex flex-row mt-10 pl-3">
+        <img className="h-96 w-[70%] object-fill" src={BlackFridayImage} alt="" />
+        <div className="flex flex-col w-[25%] mx-auto border border-purple-900 rounded-md">
+            <p className="py-2 text-center text-yellow-500  border-b">Offer Of The Day</p>
+
+
+            <SliderComponent />
+        </div>
+      </div>
     </h1>
   );
 }

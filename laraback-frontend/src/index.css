@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.carousel-container{
+  display: flex;
+  flex: 1;
+  
+}
