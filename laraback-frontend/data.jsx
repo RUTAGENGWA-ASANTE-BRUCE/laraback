@@ -8,22 +8,22 @@ export const functionalities=[
     {
         title:"Browse",
         description:"Browse Cashback and choose from thousands of stores",
-        icon:   <FaSearchDollar className="text-3xl m-auto   bg-clip-text bg-gradient-to-r from-orange-400 to-purple-800" />
+        icon:   <FaSearchDollar className="text-3xl m-auto   " />
     },
     {
         title:"Shop",
         description:"Follow the link to your favorite store or deal and purchase as normal",
-        icon:   <BsCart3 className="text-3xl m-auto   bg-clip-text bg-gradient-to-r from-orange-400 to-purple-800" />
+        icon:   <BsCart3 className="text-3xl m-auto   " />
     },
     {
         title:"Earn",
         description:"Cash Back added to your account",
-        icon:   <GiTakeMyMoney className="text-3xl m-auto   bg-clip-text bg-gradient-to-r from-orange-400 to-purple-800" />
+        icon:   <GiTakeMyMoney className="text-3xl m-auto   " />
     },
     {
         title:"Withdraw",
         description:"Request payment and get via bank transfer, Paypal or gift voucher",
-        icon:   <FaMoneyBillAlt className="text-3xl m-auto   bg-clip-text bg-gradient-to-r from-orange-400 to-purple-800" />
+        icon:   <FaMoneyBillAlt className="text-3xl m-auto   " />
     }
 ]
 
