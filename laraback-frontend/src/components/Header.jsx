@@ -12,7 +12,7 @@ function Header() {
             <BsFillBagFill className=" mt-1" />
             <p className="">Laraback<span className="text-black">pro</span></p>
         </div> */}
-        <img src={Logo} className=" h-12 " alt='' />
+        <img src={Logo} className=" h-12 object-contain " alt='' />
         <div className="flex flex-row text-lg font-semibold mt-2.5">
             <div className="flex flex-row ml-3">
                 <p>Offers</p>
