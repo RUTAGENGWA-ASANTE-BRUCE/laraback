@@ -4,7 +4,8 @@ import {BiSearch} from "react-icons/bi"
 import {FiUser,FiChevronDown} from "react-icons/fi"
 import {IoMdAdd} from "react-icons/io"
 import {FaSearch} from "react-icons/fa"
-import Logo from "../assets/laraback-logo.png"
+import Logo from "../public/laraback-logo.png"
+import Image from 'next/image'
 function Header() {
   return (
     <div className="flex flex-row sticky bg-white w-full p-1  px-3 justify-between border-b">
@@ -12,7 +13,7 @@ function Header() {
             <BsFillBagFill className=" mt-1" />
             <p className="">Laraback<span className="text-black">pro</span></p>
         </div> */}
-        <img src={Logo} className=" h-12 object-contain " alt='' />
+        <Image src={Logo}width={200} height={50} layouts="fixed"/>
         <div className="flex flex-row text-lg font-semibold mt-2.5">
             <div className="flex flex-row ml-3">
                 <p>Offers</p>

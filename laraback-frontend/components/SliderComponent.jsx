@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import OfferCard from "../components/OfferCard";
+import React from "react";
+import OfferCard from "./OfferCard";
 import Slider from "react-slick";
-import { offersOfDay } from "../../data";
+import { offersOfDay } from "../data";
 
 const SliderComponent=()=> {
     const settings = {

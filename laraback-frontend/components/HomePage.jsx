@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import FunctionalityCard from "../components/FunctionalityCard";
-import AuthForm from "../components/AuthForm";
-import BlackFridayImage from "../assets/blackblow.png";
-import SliderComponent from "../components/SliderComponent";
-import Store from "../components/Store";
+import FunctionalityCard from "./FunctionalityCard";
+import AuthForm from "./AuthForm";
+import BlackFridayImage from "../public/blackblow.png";
+import SliderComponent from "./SliderComponent";
+import Store from "./Store";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { BsGift } from "react-icons/bs";
-import OfferCard2 from "../components/OfferCard2";
-import { deals, functionalities, offers, ourCV, stores } from "../../data";
-import DealCard from "../components/DealCard";
-import advertCar1 from "../assets/advertCard1.png";
-import advertCar2 from "../assets/advertCard2.png";
-import advertCar3 from "../assets/advertCard3.png";
+import OfferCard2 from "./OfferCard2";
+import { deals, functionalities, offers, ourCV, stores } from "../data";
+import DealCard from "./DealCard";
+import advertCard1 from "../public/advertCard1.png";
+import advertCard2 from "../public/advertCard2.png";
+import advertCard3 from "../public/advertCard3.png";
+import Image from "next/image";
 var settings = {
   dots: true,
   infinite: true,
@@ -61,7 +62,7 @@ const headings = {
   ],
 };
 
-function Home() {
+function HomePage() {
   const [selectedStoreHeading, setSelectedStoreHeading] = useState(
     headings.store[0]
   );
@@ -118,11 +119,12 @@ function Home() {
       </svg>
       <div className="p-4">
         <div className="flex flex-row mt-10">
-          <img
-            className="h-96 w-[70%] object-fill"
-            src={BlackFridayImage}
-            alt=""
+        <div className="w-[70%] h-96 relative">
+
+          <Image
+            src={BlackFridayImage}  layout='fill'
           />
+        </div>
           <div className="flex flex-col w-[25%] mx-auto border border-purple-900 rounded-md bg-white">
             <p className="py-2 text-center text-yellow-500  border-b">
               Offer Of The Day
@@ -230,11 +232,11 @@ function Home() {
           <FaLongArrowAltRight className=" inline-flex" />
         </button>
         <div className="flex flex-row justify-between mt-10 w-full">
-          <img src={advertCar1} className="h-[450px] w-[30%]  " alt="" />
-          <img src={advertCar2} className="h-[450px] w-[30%] " alt="" />
-          <img src={advertCar3} className="h-[450px] w-[30%] " alt="" />
+         <div className="h-[450px] w-[30%]  relative"><Image src={advertCard1}   layout='fill' objectFit='contain'/> </div>
+         <div className="h-[450px] w-[30%] relative "><Image src={advertCard2}    layout='fill' objectFit='contain'/> </div>
+         <div className="h-[450px] w-[30%]  relative"><Image src={advertCard3}  layout='fill' objectFit='contain' /> </div>
         </div>
-        <div className=" mt-5 bg-purple-50 flex flex-row justify-between border-2 border-purple-200 p-5 rounded-md">
+        <div className=" mt-10 bg-purple-50 flex flex-row justify-between border-2 border-purple-200 p-5 rounded-md">
           <div className="flex flex-row">
             <BsGift className="mt-1 text-[60px] text-purple-800" />
             <div className="ml-2">
@@ -319,7 +321,7 @@ function Home() {
               LarabackPro, SImply known among the top Cashback sites in th
               world, serves its users by catering them best details, discounts
               and coupons which are tested manually every day for the ease of
-              teh customer to compare and purchase their favorite products on
+              the customer to compare and purchase their favorite products on
               500+ various online website (e.g,Flikpart, Amazon, Jabong,
               Makemytrip, Yatra, Ajio, Myntra, Foodpanda etc) along with the
               Etra Cashback on their transactions.
@@ -374,4 +376,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

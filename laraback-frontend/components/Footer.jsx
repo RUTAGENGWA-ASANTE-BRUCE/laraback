@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/laraback-logo.png";
+import Logo from "../public/laraback-logo.png";
 import {
   FaFacebookF,
   FaTwitter,
@@ -10,6 +10,7 @@ import {
   FaRedditAlien,
   FaLinkedinIn,
 } from "react-icons/fa";
+import Image from "next/image";
 
 const links = {
   ourCompany: [
@@ -87,7 +88,7 @@ function Footer() {
             <h5 className="text-xl text-gray-600 font-semibold">
               About LarabackPro
             </h5>
-            <img src={Logo} className=" h-12 object-contain " alt="" />
+            <Image src={Logo} width={200} height={50} layouts="fixed" />
             <p className="w-72   tracking-wider">
               At LarabackPro, we help you save money through our comprehensive
               listing of coupons offers, deals and discounts from top online
