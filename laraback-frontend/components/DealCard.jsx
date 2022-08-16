@@ -2,7 +2,7 @@ import React from 'react'
 
 function DealCard({deal}) {
   return (
-    <div className="group w-72 border pl-5 py-6  relative border-purple-800 bg-white rounded-md flex flex-col space-y-4">
+    <div className="group w-[100%] md:w-72 border pl-5 py-6  relative border-purple-800 bg-white rounded-md flex flex-col space-y-4">
         <div className="flex flex-row justify-between">
     <img className="w-24 h-14 object-contain" src={deal.companyImage} alt="" />
     <button className="p-1 text-white bg-purple-800  h-10  items-center">{deal.description.toUpperCase()}</button>

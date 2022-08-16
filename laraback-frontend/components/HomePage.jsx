@@ -75,10 +75,10 @@ function HomePage() {
 
   return (
     <div className=" bg-orange-50  min-h-screen">
-      <div className="flex flex-row px-4">
-        <div className="w-[65%] pt-20">
+      <div className="flex flex-row px-4 flex-wrap relative">
+        <div className="w-[100%] md:w-[65%] pt-20">
           <div>
-            <h1 className="text-[45px] font-semibold  text-orange-400 mt-3">
+            <h1 className=" text-[35px] md:text-[45px] font-semibold  text-orange-400 mt-3">
               Get up to 40% Cashback at over 2,500 stores
             </h1>
             <p className="mt-2 font-light">
@@ -103,11 +103,10 @@ function HomePage() {
           </div>
         </div>
         <AuthForm />
-      </div>
 
       {/* <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 320"><path fill="rgb(233 213 255)" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,266.7C960,224,1200,128,1320,80L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> */}
       <svg
-        className="absolute bottom-0 z-20"
+        className="absolute -bottom-1 z-20"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
       >
@@ -117,15 +116,16 @@ function HomePage() {
           d="M0,224L48,234.7C96,245,192,267,288,282.7C384,299,480,309,576,288C672,267,768,213,864,197.3C960,181,1056,203,1152,176C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         ></path>
       </svg>
+      </div>
       <div className="p-4">
-        <div className="flex flex-row mt-10">
-        <div className="w-[70%] h-96 relative">
+        <div className="flex flex-wrap space-y-2 flex-row mt-10">
+        <div className="w-[100%] md:w-[70%] h-96 relative">
 
           <Image
             src={BlackFridayImage}  layout='fill'
           />
         </div>
-          <div className="flex flex-col w-[25%] mx-auto border border-purple-900 rounded-md bg-white">
+          <div className="flex flex-col w-[100%] md:w-[25%] mx-auto md:pb-0 pb-10 border border-purple-900 rounded-md bg-white">
             <p className="py-2 text-center text-yellow-500  border-b">
               Offer Of The Day
             </p>
@@ -143,7 +143,7 @@ function HomePage() {
                     selectedStoreHeading?.id === heading.id
                       ? "border-b-4  border-orange-400 text-orange-400"
                       : "text-gray-400"
-                  } font-semibold text-lg`}
+                  } font-semibold text-xs md:text-base`}
                   onClick={() => {
                     setSelectedStoreHeading(heading);
                   }}
@@ -156,7 +156,7 @@ function HomePage() {
           <p className=" text-gray-500  mt-5">
             Browse the cashback offers from top store and enjoy the discount!
           </p>
-          <div className="grid grid-cols-5 pt-5 gap-5">
+          <div className="flex flex-row flex-wrap pt-5 gap-2.5">
             {stores.map((store) => (
               <Store company={store} key={store.image} />
             ))}
@@ -177,7 +177,7 @@ function HomePage() {
                     selectedOfferHeading?.id === heading.id
                       ? "border-b-4  border-orange-400 text-orange-400"
                       : "text-gray-400"
-                  } font-semibold text-lg`}
+                  } font-semibold text-xs md:text-base`}
                   onClick={() => {
                     setSelectedOfferHeading(heading);
                   }}
@@ -188,7 +188,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-3 pt-4 gap-5">
+        <div className="flex flex-row flex-wrap pt-4 gap-4">
           {offers.map((offer) => (
             <OfferCard2 key={offer.companyImage} offer={offer} />
           ))}
@@ -207,7 +207,7 @@ function HomePage() {
                     selectedDealHeading?.id === heading.id
                       ? "border-b-4  border-orange-400 text-orange-400"
                       : "text-gray-400"
-                  } font-semibold text-lg`}
+                  } font-semibold text-xs md:text-base`}
                   onClick={() => {
                     setSelectedDealHeading(heading);
                   }}
@@ -221,7 +221,7 @@ function HomePage() {
             Grab the best deals of the day from popular stores along with the
             cashback.
           </p>
-          <div className="grid grid-cols-5 gap-3 mt-4">
+          <div className="flex flex-row flex-wrap gap-2.5 mt-4">
             {deals.map((deal) => (
               <DealCard key={deal.image} deal={deal} />
             ))}
@@ -240,11 +240,11 @@ function HomePage() {
           <div className="flex flex-row">
             <BsGift className="mt-1 text-[60px] text-purple-800" />
             <div className="ml-2">
-              <h1 className="text-3xl text-purple-800 ">
-                Join barackPRO Now and{" "}
+              <h1 className="text-lg md:text-3xl text-purple-800 ">
+                Join larackPRO Now and{" "}
                 <span className="text-orange-400">Get a Rp40 Bonus</span> Today!
               </h1>
-              <p className="mt-2">
+              <p className="mt-2 text-xs md:text-base">
                 The best deals, sales, coupons & more 10,000 offers you can find
                 here.
               </p>
@@ -272,7 +272,7 @@ function HomePage() {
               Number tells louder the words...
             </p>
           </div>
-          <div className="flex flex-row justify-between mx-10">
+          <div className="flex flex-row flex-wrap justify-between md:mx-10">
             {ourCV.map((info) => (
               <div className="space-y-2">
                 <p className=" text-3xl pt-3 rounded-md text-white font-semibold bg-purple-800 p-1 px-2 h-16 w-56 text-center mt-1">
@@ -294,7 +294,7 @@ function HomePage() {
               We offer the cashback payment with multiple payment mode.
             </p>
           </div>
-          <div className="flex flex-row justify-between mx-10">
+          <div className="flex flex-row md:gap-0 gap-5 md:justify-between flex-wrap md:mx-10">
             {[
               "https://naturalsbynaomi.ie/wp-content/uploads/2021/05/gift-voucher.jpg",
               "https://i0.wp.com/financebuddha.com/blog/wp-content/uploads/2016/12/23155635/UPI1.jpg?fit=945%2C709&ssl=1",
@@ -314,10 +314,10 @@ function HomePage() {
         </div>
         <div className="mt-10 space-y-10">
           <div>
-            <h1 className="text-2xl font-semibold text-gray-600">
+            <h1 className="text-base md:text-2xl font-semibold text-gray-600">
               Cashback can be withdrawn using Paypal or Bank Transfer
             </h1>
-            <p className="mt-4 text-[18px] font-light">
+            <p className="mt-4 text-sm md:text-[18px] font-light">
               LarabackPro, SImply known among the top Cashback sites in th
               world, serves its users by catering them best details, discounts
               and coupons which are tested manually every day for the ease of
@@ -335,10 +335,10 @@ function HomePage() {
           </div>
 
           <div>
-            <h1 className="text-2xl font-semibold text-gray-600">
+            <h1 className="text-base md:text-2xl font-semibold text-gray-600">
               Why LarabackPro
             </h1>
-            <p className="mt-4 text-[18px] font-light">
+            <p className="mt-4 text-sm md:text-[18px] font-light">
               We help our users save upto 100% with our Cashback offers on their
               online shopping. Our mission is to be a single platform, where any
               user can get best experience at browsing their favorite items,
@@ -347,10 +347,10 @@ function HomePage() {
             </p>
           </div>
           <div>
-            <h1 className="text-2xl font-semibold text-gray-600">
+            <h1 className="text-base md:text-2xl font-semibold text-gray-600">
               Highest Cahsback
             </h1>
-            <p className="mt-4 text-[18px] font-light">
+            <p className="mt-4 text-sm md:text-[18px] font-light">
               We help our users save upto 100% with our Cashback offers on their
               online shopping. Our mission is to be a single platform, where any
               user can get best experience at browsing their favorite items,
@@ -359,10 +359,10 @@ function HomePage() {
             </p>
           </div>
           <div>
-            <h1 className="text-2xl font-semibold text-gray-600">
+            <h1 className="text-base md:text-2xl font-semibold text-gray-600">
               100% Trustworthy
             </h1>
-            <p className="mt-4 text-[18px] font-light">
+            <p className="mt-4 text-sm md:text-[18px] font-light">
               We help our users save upto 100% with our Cashback offers on their
               online shopping. Our mission is to be a single platform, where any
               user can get best experience at browsing their favorite items,

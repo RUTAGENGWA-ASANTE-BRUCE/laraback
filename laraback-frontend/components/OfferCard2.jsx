@@ -2,7 +2,7 @@ import React from 'react'
 
 function OfferCard2({offer}) {
   return (
-    <div className="w-[480px] px-2 h-56 border bg-white rounded-md py-5 space-y-5 flex flex-col  border-purple-800">
+    <div className="w-[100%] md:w-[480px] px-2 h-56 border bg-white rounded-md py-5 space-y-5 flex flex-col  border-purple-800">
     <div className="flex fle-row justify-between">
     <img className="w-28 h-10 object-contain " src={offer.companyImage} alt="" />
     {offer.rate && (<p className="text-purple-800">{offer.upto?`Upto ${offer.rate}% Cahsback`:`Flat ${offer.rate}% Cashback`}</p>)}

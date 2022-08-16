@@ -83,7 +83,7 @@ function Footer() {
         ></path>
       </svg>
       <div className="bg-orange-100">
-        <div className="flex flex-row justify-between px-3 pb-10 border-b border-gray-400">
+        <div className="flex flex-row flex-wrap justify-between gap-5 px-3 pb-10 border-b border-gray-400">
           <div className="space-y-4">
             <h5 className="text-xl text-gray-600 font-semibold">
               About LarabackPro
@@ -99,7 +99,7 @@ function Footer() {
             <h5 className="text-xl text-gray-600 font-semibold">Our Company</h5>
             <ol className="list-none font-light  tracking-wider">
               {links.ourCompany.map((link) => (
-                <li>{link.title}</li>
+                <li className="hover:text-purple-800 cursor-pointer w-fit" key={link.title}>{link.title}</li>
               ))}
             </ol>
           </div>
@@ -109,7 +109,7 @@ function Footer() {
             </h5>
             <ol className="list-none font-light  tracking-wider">
               {links.importantLinks.map((link) => (
-                <li>{link.title}</li>
+                <li className="hover:text-purple-800 cursor-pointer w-fit" key={link.title}>{link.title}</li>
               ))}
             </ol>
           </div>
@@ -117,13 +117,13 @@ function Footer() {
             <h5 className="text-xl text-gray-600 font-semibold">EXplore</h5>
             <ol className="list-none font-light  tracking-wider">
               {links.explore.map((link) => (
-                <li>{link.title}</li>
+                <li className="hover:text-purple-800 cursor-pointer w-fit" key={link.title}>{link.title}</li>
               ))}
             </ol>
           </div>
           <div className="space-y-4">
             <h5 className="text-xl text-gray-600 font-semibold">Follow Us</h5>
-            <div className="grid grid-cols-5 gap-5">
+            <div className="flex flex-wrap md:grid md:grid-cols-5 gap-5">
               {links.followUs.map((link) => (
                 <div className={`w-10 h-10 rounded-full  ${link.bgColor}`}>
                   {link.Icon}

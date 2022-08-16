@@ -6,7 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import {BsGift} from "react-icons/bs"
 function AuthForm() {
   return (
-    <div className="w-[33%] z-50 h-[87vh] mt-5 py-5 bg-white rounded-br-[70px] rounded-tl-[70px]">
+    <div className=" w-[100%] mx-auto md:w-[33%] z-50 h-[87vh] mt-5 py-5 bg-white rounded-br-[70px] rounded-tl-[70px]">
     <div className="pb-3 border-b">
         <div className="flex flex-row text-white h-10 w-fit px-3 m-auto items-center font-light bg-orange-500 rounded-full">
             <BsGift className="text-base" />
