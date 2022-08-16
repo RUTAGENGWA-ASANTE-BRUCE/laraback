@@ -6,7 +6,7 @@ import { IoMdAdd } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import Logo from "../public/laraback-logo.png";
 import Image from "next/image";
-import NavBarDropDown from "./navBarDropdown"
+import NavBarDropDown from "./NavBarDropdown"
 function Header() {
   return (
     <div className="flex flex-col lg:flex-row sticky bg-white w-full p-1  px-3 justify-between border-b">
