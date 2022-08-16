@@ -104,7 +104,6 @@ function HomePage() {
         </div>
         <AuthForm />
 
-      {/* <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 320"><path fill="rgb(233 213 255)" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,266.7C960,224,1200,128,1320,80L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> */}
       <svg
         className="absolute -bottom-1 z-20"
         xmlns="http://www.w3.org/2000/svg"
