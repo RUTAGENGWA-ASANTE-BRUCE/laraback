@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 import { BsFillBagFill } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { FiUser, FiChevronDown } from "react-icons/fi";
@@ -51,10 +52,13 @@ function Header() {
           <FiUser className=" text-base mt-1 mr-0.5" />
           <p>Sign in</p>
         </div>
+        <Link href='/admin'>
+
         <button className="rounded-md text-white font-semibold md:text-base text-sm flex flex-row bg-purple-800 p-1 px-2 h-10  items-center mt-1">
           <IoMdAdd className="md:text-2xl text-lg" />
           Join Us
         </button>
+        </Link>
         <div className='visible lg:hidden mt-1 h-10 bg-purple-800 rounded-md cursor-pointer'>
     <NavBarDropDown />
      
