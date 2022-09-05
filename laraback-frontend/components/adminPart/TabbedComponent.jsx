@@ -91,7 +91,7 @@ export default function Example() {
   })
 
   return (
-    <div className="w-full h-full flex  py-3 sm:px-0 bg-white mt-3">
+    <div className="w-full h-screen flex  py-3 sm:px-0 bg-white mt-3">
       <Tab.Group>
         <Tab.List className=" w-60 ml-3 border">
           {Object.keys(categories).map((category) => (
@@ -119,7 +119,7 @@ export default function Example() {
                 '  ml-3'
               )}
             >
-              <ul>
+              <div className="w-full h-full">
                 {posts.map((post) => (
                   <li
                     key={post.id}
@@ -146,7 +146,7 @@ export default function Example() {
                     />
                   </li>
                 ))}
-              </ul>
+              </div>
             </Tab.Panel>
           ))}
         </Tab.Panels>

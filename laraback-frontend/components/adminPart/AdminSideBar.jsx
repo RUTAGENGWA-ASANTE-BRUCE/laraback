@@ -10,6 +10,7 @@ import {FaAnchor} from 'react-icons/fa'
 import {MdAirplanemodeActive,MdOutlineSettingsSuggest} from 'react-icons/md'
 import {FaUsers} from 'react-icons/fa'
 import {BsCash} from 'react-icons/bs'
+import {TbPlug} from 'react-icons/tb'
 function AdminNavBar() {
   return (
     <div className="max-h-screen bg-white border-r w-[18%] shadow-xl">
@@ -26,7 +27,8 @@ function AdminNavBar() {
     <DropDownNavigator icon={<BsCash className="text-lg mt-1 mr-2 opacity-50" />} title='SALES & CASH' links={["Manual Sales Import","Click Log","Custom Conditions","Sales Transactions","Referral Transactions","Cashback Transactions","Bonus Transactions","Payment Modes","Payment Method Fields"]}/>
     <DropDownNavigator icon={<FaUsers className="text-lg mt-1 mr-2 opacity-50" />} title='USERS' links={["Users","Missing CB Claims","User Payment Modes","Withdrawal Requests","User Favorites","Share & Earn Links","Contact Form"]}/>
     <DropDownNavigator icon={<AiOutlineBars className="text-lg mt-1 mr-2 opacity-50" />} title='REPORTS & LOGS' links={["SMS Log","Earning by Network","Referral Invite Log","Earning by Stores","Referral Fraud Detection","Earning by Users"]}/>
-    <DropDownNavigator icon={<MdOutlineSettingsSuggest className="text-lg mt-1 mr-2 opacity-50" />} title='SEETINGS' links={["Settings","SEO URL Redirect","Label Translation","Email Templates","Email Template Editor","Earning by Users"]}/>
+    <DropDownNavigator icon={<MdOutlineSettingsSuggest className="text-lg mt-1 mr-2 opacity-50" />} title='SEETINGS' links={["Settings","SEO URL Redirect","Label Translation","Email Templates","Email Template Editor","Sitemap","Currency Master","Country Master"]}/>
+    <DropDownNavigator icon={<TbPlug className="text-lg mt-1 mr-2 opacity-50" />} title='DEVELOPER SETUP' links={["Language Master","Task Management","Web Backup","API Backup"]}/>
     </div>
   )
 }

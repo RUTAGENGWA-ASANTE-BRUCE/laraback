@@ -337,6 +337,51 @@ const contact_form_keys=[
   "Reason",
   "Updated At"
 ]
+
+const seo_url_redirect_keys=[
+  "Old Url",
+  "New Url",
+  "Status"
+]
+const email_template_keys=[
+  "Name",
+  "Subject",
+  "Template",
+  "View Name",
+  "Updated At"
+]
+
+const sitemap_keys=[
+  "Module",
+  "Slug",
+  "Frequency",
+  "Priority",
+  "Enabled",
+  "Last Updated"
+]
+const currency_master_keys=[
+  "Name",
+  "Iso Code",
+  "Symbol",
+  "Conversion Rate",
+  "Enabled",
+  "Is Primary",
+  "Dispal As"
+]
+
+const country_master_keys=[
+  "Name",
+  "Dial Code",
+  "Code",
+  "Enable OTP",
+  "Enabled"
+]
+const language_master_keys=[
+  "Id",
+  "Name",
+  "Code",
+  "Enabled"
+]
 const tableRows = [
   {
     id: 1,
@@ -464,7 +509,7 @@ const makeForm = (model, data) => {
     const toggles=['banned']
     const checkBoxes=['Closed By',"Platform"]
     const textAreas=[ "User Message","Admin Note"]
-    const notTranslatable = ["url","Users List","Earnings","Clicks","Code","Method Code","Account",'Url',"Email","Cashback","Currency",'Endpoint','Request Method',"Minimum Amount First",'page_url', "page", "slug",'Response Status',"Referral Percent",
+    const notTranslatable = ["url","Iso Code","Dial Code","Conversion Rate","Symbol","Users List","Earnings","Clicks","Code","Method Code","Account",'Url',"Email","Cashback","Currency",'Endpoint',"Frequency","Module","View Name","Template",'Request Method',"Minimum Amount First",'page_url', "Page", "Priority","Slug",'Response Status',"Referral Percent",
     "Source Type",
     "Source Id",
     "Ip Address",
@@ -488,7 +533,7 @@ const makeForm = (model, data) => {
         type: 11,
       });
       
-    } else if (element.slice(-3) == "able" || element.slice(-5) == "abled" || element.slice(-3) == "red" || element.slice(0,3) == "Can" || element.slice(-7) == "Allowed"|| toggles.includes(element)) {
+    } else if (element.slice(-3) == "able" || element.slice(-5) == "abled" ||  element.slice(0,3) == "Is " ||  element.slice(-3) == "red" || element.slice(0,6) == "Enable"|| element.slice(0,3) == "Can" || element.slice(-7) == "Allowed"|| toggles.includes(element)) {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 9,
@@ -500,7 +545,7 @@ const makeForm = (model, data) => {
         type: 13,
       });
     } 
-    else if (notTranslatable.includes(element) || element.slice(-2) == "Id" || element.slice(-2) == "At"   || element.slice(-6) == "Amount") {
+    else if (notTranslatable.includes(element) || element.slice(-2) == "Id" || element.slice(-3) == "Url"  || element.slice(-2) == "At"   || element.slice(-6) == "Amount") {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 2,
@@ -1407,6 +1452,142 @@ if
 
 }
 
+if
+(params[0] == "seo_url_redirect") {
+ if (params[1] == "form") {
+   return (
+     <AdminComponent
+       routes={params}
+       form={
+         <CustomizableForm
+           formProperties={makeForm(seo_url_redirect_keys)}
+         />
+       }
+     />
+   );
+ }
+
+ return (
+   <AdminComponent
+     routes={params}
+     tableData={makeTableData(seo_url_redirect_keys)}
+   />
+ );
+}
+
+if
+(params[0] == "email_templates") {
+ if (params[1] == "form") {
+   return (
+     <AdminComponent
+       routes={params}
+       form={
+         <CustomizableForm
+           formProperties={makeForm(email_template_keys)}
+         />
+       }
+     />
+   );
+ }
+
+ return (
+   <AdminComponent
+     routes={params}
+     tableData={makeTableData(email_template_keys)}
+   />
+ );
+}
+if
+(params[0] == "sitemap") {
+ if (params[1] == "form") {
+   return (
+     <AdminComponent
+       routes={params}
+       form={
+         <CustomizableForm
+           formProperties={makeForm(sitemap_keys)}
+         />
+       }
+     />
+   );
+ }
+
+ return (
+   <AdminComponent
+     routes={params}
+     tableData={makeTableData(sitemap_keys)}
+   />
+ );
+}
+
+if
+(params[0] == "currency_master") {
+ if (params[1] == "form") {
+   return (
+     <AdminComponent
+       routes={params}
+       form={
+         <CustomizableForm
+           formProperties={makeForm(currency_master_keys)}
+         />
+       }
+     />
+   );
+ }
+
+ return (
+   <AdminComponent
+     routes={params}
+     tableData={makeTableData(currency_master_keys)}
+   />
+ );
+}
+
+
+if
+(params[0] == "country_master") {
+ if (params[1] == "form") {
+   return (
+     <AdminComponent
+       routes={params}
+       form={
+         <CustomizableForm
+           formProperties={makeForm(country_master_keys)}
+         />
+       }
+     />
+   );
+ }
+
+ return (
+   <AdminComponent
+     routes={params}
+     tableData={makeTableData(country_master_keys)}
+   />
+ );
+}
+if
+(params[0] == "language_master") {
+ if (params[1] == "form") {
+   return (
+     <AdminComponent
+       routes={params}
+       form={
+         <CustomizableForm
+           formProperties={makeForm(language_master_keys)}
+         />
+       }
+     />
+   );
+ }
+
+ return (
+   <AdminComponent
+     routes={params}
+     tableData={makeTableData(language_master_keys)}
+   />
+ );
+}
 
   if (params[0] == "stores") {
     if (params[1] == "form") {
