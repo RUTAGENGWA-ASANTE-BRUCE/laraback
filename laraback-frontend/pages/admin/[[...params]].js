@@ -1,7 +1,7 @@
 import React from "react";
 import AdminComponent from "../../components/adminPart/AdminComponent";
 import { useRouter } from "next/router";
-
+import TabbedComponent from "../../components/adminPart/TabbedComponent";
 import CustomizableForm from "../../components/adminPart/CustomizableForm";
 import MenuBuilder from "../../components/adminPart/MenuGenerator";
 const affiliate_network_keys = [
@@ -1392,6 +1392,21 @@ if
    />
  );
 }
+if
+(params[0] == "settings") {
+   return (
+     <AdminComponent
+       routes={params}
+       form={
+         <TabbedComponent
+         />
+       }
+     />
+   );
+
+
+}
+
 
   if (params[0] == "stores") {
     if (params[1] == "form") {
