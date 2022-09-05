@@ -45,7 +45,8 @@ function LanguageButtonsInput({
       {inputAvailable && (
         <input
           type="text"
-          className={`${flexRow?'p-1':'p-2'} w-full border-2 border-gray-400 outline-none ${flexRow && 'h-9 mt-1'} ${!flexRow && 'rounded-md'} ${flexRow?'':'mt-2'}`}
+          name={title}
+          className={`${flexRow?'p-1':'p-2'} w-full border-2 border-gray-400  ${flexRow && 'h-9 mt-1'} ${!flexRow && 'rounded-md'} ${flexRow?'':'mt-2'}`}
           placeholder={placeholder}
         />
       )}
@@ -58,7 +59,7 @@ function LanguageButtonsInput({
       </div>
       )}
       {textAreaAvailable && (
-        <textarea rows={10} className="w-full" />
+        <textarea rows={6} name={title}  className="w-full border-2 border-gray-400 p-2 rounded-md" />
       )}
       {toggleInputAvailable && (<ToggleComponent />)}
       {listBoxAvailable && (<ListBox />)}

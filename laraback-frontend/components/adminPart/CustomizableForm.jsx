@@ -107,6 +107,9 @@ function CustomizableForm({ formProperties, editFormData }) {
                 else if (element.type ===13){
                   return (<LanguageButtonsInput  title={element.title} subscripted datePickerAvailable />)
                 }
+                else if (element.type ===14){
+                  return (<LanguageButtonsInput  title={element.title} subscripted textAreaAvailable />)
+                }
                 
               })}
             </div>
