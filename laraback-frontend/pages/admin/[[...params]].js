@@ -299,7 +299,6 @@ const missing_cb_claim_keys=[
   "Platform",
   "Transaction Date ",
   "Order Id",
-  "Order Amount",
   "Currency",
   "User Message",
   "Admin Note"

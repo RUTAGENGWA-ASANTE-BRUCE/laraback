@@ -17,7 +17,7 @@ function AdminComponent({ pageDescriptions, form, tableData,routes }) {
 
         <div className="flex-1 px-7 ">
           <div className=" h-14 w-full mt-8 flex shadow-lg   items-center px-3 flex-row bg-white justify-between">
-            <h3 className="font-semibold">{routes[routes.length-1].split('_').join(' ').toUpperCase()}</h3>
+            <h3 className="font-semibold">{routes[routes.length-1]?.split('_').join(' ').toUpperCase()}</h3>
             <div className="flex flex-row space-x-2 text-gray-400">
               <div className="space-x-1 flex flex-row">
               <h5>Dashboard</h5>
@@ -27,7 +27,7 @@ function AdminComponent({ pageDescriptions, form, tableData,routes }) {
                 <h5>{routes[routes.length-2]}</h5>
                 <AiOutlineRight className="mt-2 text-xs" />
               </div>
-              <h5>{routes[routes.length-1].split('_').join(' ')}</h5>
+              <h5>{routes[routes.length-1]?.split('_').join(' ')}</h5>
             </div>
           </div>
           {tableData && (

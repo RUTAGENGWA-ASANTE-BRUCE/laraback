@@ -4,6 +4,7 @@ import {BsInfoCircle} from 'react-icons/bs'
 import ToggleComponent from './ToggleComponent';
 import { ListBox } from './ListBoxComponent';
 import DatePickerComponent from './DatePickerComponent';
+import { useForm } from "react-hook-form";
 
 const EditorComponent=dynamic(()=>import('./EditorComponent'),{ssr:false})
 function LanguageButtonsInput({
@@ -15,7 +16,7 @@ function LanguageButtonsInput({
   inputAvailable,
   textAreaAvailable,
   datePickerAvailable,
-  setValue,
+  register,
   listBoxAvailable,
   toggleInputAvailable,
   flexRow,
@@ -46,8 +47,10 @@ function LanguageButtonsInput({
         <input
           type="text"
           name={title}
+          // {...register(title)}
           className={`${flexRow?'p-1':'p-2'} w-full border-2 border-gray-400  ${flexRow && 'h-9 mt-1'} ${!flexRow && 'rounded-md'} ${flexRow?'':'mt-2'}`}
           placeholder={placeholder}
+          required
         />
       )}
       </div>
@@ -59,9 +62,9 @@ function LanguageButtonsInput({
       </div>
       )}
       {textAreaAvailable && (
-        <textarea rows={6} name={title}  className="w-full border-2 border-gray-400 p-2 rounded-md" />
+        <textarea rows={6}{...register(title)}  className="w-full border-2 border-gray-400 p-2 rounded-md" />
       )}
-      {toggleInputAvailable && (<ToggleComponent />)}
+      {toggleInputAvailable && (<ToggleComponent register={register} name={title} />)}
       {listBoxAvailable && (<ListBox />)}
       {datePickerAvailable && (<DatePickerComponent />)}
     </div>

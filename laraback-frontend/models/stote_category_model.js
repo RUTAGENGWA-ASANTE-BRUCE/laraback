@@ -1,5 +1,5 @@
 import {Schema,model,models} from 'mongoose'
-const retailer_to_category_schema =new Schema({
+const store_category_schema =new Schema({
     "category_url":String,
     "description":String,
     "meta_description":String,
@@ -12,6 +12,6 @@ const retailer_to_category_schema =new Schema({
 },
 {timestamps:true})
 
-const retailer_to_category=models.retailer_to_categories || model('retailer_to_categories',retailer_to_category_schema)
+const store_category=models.store_categories || model('store_categories',store_category_schema)
 
-export default retailer_to_category;
+export default store_category;
