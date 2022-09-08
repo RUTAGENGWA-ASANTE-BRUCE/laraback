@@ -11,12 +11,12 @@ const people = [
   { name: "Tanya Fox" },
   { name: "Hellen Schmidt" },
 ];
-export const ListBox=({justDropDown})=> {
+export const ListBox=({justDropDown,name})=> {
   const [selected, setSelected] = useState(people[0]);
 
   return (
     <div className={justDropDown?'w-40':'w-full mt-3'}>
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox name={name}  value={selected} onChange={setSelected}>
         <div className=" -mt-1">
           <Listbox.Button className={`border-2 border-gray-400 flex flex-row justify-between w-full cursor-default ${justDropDown?'':'rounded-md'} bg-white ${justDropDown?'p-0.5 py-1.5':'py-2 pl-3'} text-left  focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm`}>
             <span className="block truncate">{selected.name}</span>
@@ -81,8 +81,8 @@ export default function ListBoxComponent({ title}) {
       </h6>
       {title?(
 
-        <ListBox  />
-      ):(<ListBox justDropDown/>)}
+        <ListBox name={title}  />
+      ):(<ListBox name={title} justDropDown/>)}
     </div>
     </div>
   );

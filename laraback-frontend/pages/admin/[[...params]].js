@@ -505,7 +505,7 @@ const makeForm = (model, data) => {
   model.forEach((element) => {
     const files = ["photo", "Image", "logo"];
     const dropDowns = ["category", "country","Store","User"];
-    const toggles=['banned']
+    const toggles=['Banned']
     const checkBoxes=['Closed By',"Platform"]
     const textAreas=[ "User Message","Admin Note"]
     const notTranslatable = ["url","Iso Code","Dial Code","Conversion Rate","Symbol","Users List","Earnings","Clicks","Code","Method Code","Account",'Url',"Email","Cashback","Currency",'Endpoint',"Frequency","Module","View Name","Template",'Request Method',"Minimum Amount First",'page_url', "Page", "Priority","Slug",'Response Status',"Referral Percent",
@@ -697,7 +697,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(affiliate_network_keys)}
             />
           }
@@ -718,7 +718,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm formProperties={makeForm(store_cashback_keys)} />
+            <CustomizableForm routes={params} formProperties={makeForm(store_cashback_keys)} />
           }
         />
       );
@@ -737,7 +737,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(store_categories_keys)}
             />
           }
@@ -757,7 +757,7 @@ function Admin() {
       return (
         <AdminComponent
           routes={params}
-          form={<CustomizableForm formProperties={makeForm(coupon_keys)} />}
+          form={<CustomizableForm routes={params} formProperties={makeForm(coupon_keys)} />}
         />
       );
     }
@@ -772,7 +772,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(retailer_to_category_keys)}
             />
           }
@@ -793,7 +793,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(daily_deal_keys)}
             />
           }
@@ -814,7 +814,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(deals_category_keys)}
             />
           }
@@ -835,7 +835,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(campaign_keys)}
             />
           }
@@ -856,7 +856,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(page_content_keys)}
             />
           }
@@ -897,7 +897,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(content_block_keys)}
             />
           }
@@ -918,7 +918,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(instaback_offer_keys)}
             />
           }
@@ -939,7 +939,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(user_dashboard_page_keys)}
             />
           }
@@ -960,7 +960,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(footer_keys)}
             />
           }
@@ -981,7 +981,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(faq_keys)}
             />
           }
@@ -1002,7 +1002,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(faq_category_keys)}
             />
           }
@@ -1023,7 +1023,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(campaign_rate_keys)}
             />
           }
@@ -1044,7 +1044,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(postback_log_keys)}
             />
           }
@@ -1066,7 +1066,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(network_run_keys)}
             />
           }
@@ -1088,7 +1088,7 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm
+            <CustomizableForm routes={params}
               formProperties={makeForm(network_coupon_keys)}
             />
           }
@@ -1110,7 +1110,7 @@ function Admin() {
        <AdminComponent
          routes={params}
          form={
-           <CustomizableForm
+           <CustomizableForm routes={params}
              formProperties={makeForm(network_api_log_keys)}
            />
          }
@@ -1132,7 +1132,7 @@ function Admin() {
       <AdminComponent
         routes={params}
         form={
-          <CustomizableForm
+          <CustomizableForm routes={params}
             formProperties={makeForm(manual_sales_import_keys)}
           />
         }
@@ -1154,7 +1154,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(click_log_keys)}
          />
        }
@@ -1176,7 +1176,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(custom_condition_keys)}
          />
        }
@@ -1198,7 +1198,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(sales_transaction_keys)}
          />
        }
@@ -1220,7 +1220,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(referral_transaction_keys)}
          />
        }
@@ -1242,7 +1242,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(cashback_transaction_keys)}
          />
        }
@@ -1264,7 +1264,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(bonus_transaction_keys)}
          />
        }
@@ -1287,7 +1287,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(payment_mode_keys)}
          />
        }
@@ -1309,7 +1309,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(user_keys)}
          />
        }
@@ -1332,7 +1332,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(missing_cb_claim_keys)}
          />
        }
@@ -1354,7 +1354,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(withdrawal_request_keys)}
          />
        }
@@ -1376,7 +1376,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(user_favorite_keys)}
          />
        }
@@ -1398,7 +1398,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(share_earn_link_keys)}
          />
        }
@@ -1421,7 +1421,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(contact_form_keys)}
          />
        }
@@ -1458,7 +1458,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(seo_url_redirect_keys)}
          />
        }
@@ -1481,7 +1481,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(email_template_keys)}
          />
        }
@@ -1503,7 +1503,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(sitemap_keys)}
          />
        }
@@ -1526,7 +1526,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(currency_master_keys)}
          />
        }
@@ -1550,7 +1550,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(country_master_keys)}
          />
        }
@@ -1572,7 +1572,7 @@ if
      <AdminComponent
        routes={params}
        form={
-         <CustomizableForm
+         <CustomizableForm routes={params}
            formProperties={makeForm(language_master_keys)}
          />
        }

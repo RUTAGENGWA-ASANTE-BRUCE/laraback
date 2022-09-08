@@ -10,23 +10,37 @@ import ListBoxComponent from "./ListBoxComponent";
 import HeaderDescription from "./HeaderDescription";
 import DisclosureComponent from "./DisclosureComponent";
 import ImagePicker from "./ImagePicker";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 
 
-function CustomizableForm({ formProperties, editFormData }) {
+function CustomizableForm({ routes,formProperties, editFormData }) {
   const submit=(e)=>{
     e.preventDefault()
-    const data=[]
+    const dataObject={}
+    
+    const api=`/api/admin/${routes[0]}`
     formProperties.formSections[0].elements.forEach(({title})=>{
-      var dataObject={}
-      dataObject[title]=e.target[title]?.value
-      data.push(dataObject)
+      if(e.target[title]?.value===undefined){
+      dataObject[title]="no"
+      }
+      else{
+        dataObject[title]=e.target[title]?.value
+      }
     })
     
-
-    console.log("data",data)
+    fetch(api,{
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify(dataObject)
+    }).then(data=> console.log("success post",api)).catch(err=> console.log(err)
+    
+    
+    )
+    console.log("data",dataObject)
   }
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit,control } = useForm();
   const onSubmit = data => console.log(data);
   return (
     <form onSubmit={submit}>
@@ -62,6 +76,8 @@ function CustomizableForm({ formProperties, editFormData }) {
                   return (
                     <LanguageButtonsInput
                     register={register}
+                    Controller={Controller}
+                    control={control} 
                       placeholder={""}
                       inputAvailable
                       title={element.title}
@@ -73,6 +89,8 @@ function CustomizableForm({ formProperties, editFormData }) {
                   return (
                     <LanguageButtonsInput
                     register={register}
+                    Controller={Controller}
+                    control={control}
                       placeholder={""}
                       title={element.title}
                       inputAvailable
@@ -83,6 +101,8 @@ function CustomizableForm({ formProperties, editFormData }) {
                   return (
                     <LanguageButtonsInput
                     register={register}
+                    Controller={Controller}
+                    control={control}
                       placeholder={""}
                       title={element.title}
                       inputAvailable
@@ -100,42 +120,60 @@ function CustomizableForm({ formProperties, editFormData }) {
                 }
                 else if (element.type === 5) {
                   return (<LanguageButtonsInput
-                  register={register} inputAvailable title={element.title} />)
+                  register={register}
+                  Controller={Controller}
+                  control={control} inputAvailable title={element.title} />)
                 }
                 else if (element.type === 6) {
                   return (<LanguageButtonsInput
-                  register={register} inputAvailable informationIconAvailable title={element.title} />)
+                  register={register}
+                  Controller={Controller}
+                  control={control} inputAvailable informationIconAvailable title={element.title} />)
                 } 
                 else if (element.type ===7){
                   return (<LanguageButtonsInput
-                  register={register} inputAvailable title={element.title} subscripted informationIconAvailable/>)
+                  register={register}
+                  Controller={Controller}
+                  control={control} inputAvailable title={element.title} subscripted informationIconAvailable/>)
                 }
                 else if (element.type === 8) {
                   return (<LanguageButtonsInput
-                  register={register} textEditorAvailable informationIconAvailable title={element.title}/>)
+                  register={register}
+                  Controller={Controller}
+                  control={control} textEditorAvailable informationIconAvailable title={element.title}/>)
                 }
                 else if (element.type ===9){
                   return (<LanguageButtonsInput
-                  register={register} toggleInputAvailable subscripted  informationIconAvailable title={element.title}/>)
+                  register={register}
+                  Controller={Controller}
+                  control={control} toggleInputAvailable subscripted  informationIconAvailable title={element.title}/>)
                 }
                 else if (element.type ===10){
                   return (<LanguageButtonsInput
-                  register={register} toggleInputAvailable subscripted  title={element.title}/>)
+                  register={register}
+                  Controller={Controller}
+                  control={control} toggleInputAvailable subscripted  title={element.title}/>)
                 }
                 else if (element.type ===11){
                   return (<LanguageButtonsInput
-                  register={register} listBoxAvailable  title={element.title}/>)
+                  register={register}
+                  Controller={Controller}
+                  control={control} listBoxAvailable  title={element.title}/>)
                 }
                 else if (element.type ===12){
                   return (<CheckBoxesComponent title={element.title} checkBox1={element.checkBox1} checkBox2={element.checkBox2} checkBox3={element.checkBox3} subscripted />)
                 }
                 else if (element.type ===13){
                   return (<LanguageButtonsInput
-                  register={register}  title={element.title} subscripted datePickerAvailable />)
+                  register={register}
+                  Controller={Controller}
+                  control={control}  title={element.title} subscripted datePickerAvailable />)
                 }
                 else if (element.type ===14){
                   return (<LanguageButtonsInput
-                  register={register}  title={element.title} subscripted textAreaAvailable />)
+                  register={register}
+                  Controller={Controller}
+                  control={control}  title={element.title} subscripted textAreaAvailable />)
                 }
                 
               })}

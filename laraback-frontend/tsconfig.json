@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/adminPart/Table.jsx", "pages/home/index.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/adminPart/Table.jsx", "pages/home/index.ts", "pages/api/admin/affiliate_networks/[id].ts", "pages/api/admin/affiliate_networks/index.js"],
   "exclude": ["node_modules"]
 }

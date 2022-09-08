@@ -17,8 +17,9 @@ function DropDownNavigator({icon,title,links}) {
         leaveTo="transform scale-95 opacity-0"
       >
 
-          <Menu.Items className="flex flex-col bg-gray-200 mt-2 space-y-3 p-2">
+          <Menu.Items className="flex flex-col bg-gray-200 mt-2 pl-6 space-y-3 p-2">
           {links.map(link=>(
+              <li>
 
             <Menu.Item >
               {({ active }) => (
@@ -30,6 +31,7 @@ function DropDownNavigator({icon,title,links}) {
                 </Link>
               )}
             </Menu.Item>
+              </li>
           ))}
             
           </Menu.Items>
