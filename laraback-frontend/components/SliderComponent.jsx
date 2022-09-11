@@ -3,7 +3,7 @@ import OfferCard from "./OfferCard";
 import Slider from "react-slick";
 import { offersOfDay } from "../data";
 
-const SliderComponent=()=> {
+const   SliderComponent=({coupons,stores})=> {
     const settings = {
       dots: true,
       infinite: true,
@@ -16,7 +16,9 @@ const SliderComponent=()=> {
     return (
       <div>
         <Slider {...settings}>
-        {offersOfDay.map((offer)=>(<OfferCard key={offer.image} town={offer.town} rate={offer.rate} image={offer.image} untilDate={offer.until} />)) }
+        {coupons.map((coupon)=>{ 
+          const store=stores.find(store=>store._id==coupon["Store Id"]);
+           return(<OfferCard store={store} coupon={coupon} />)}) }
 
         </Slider>
       </div>

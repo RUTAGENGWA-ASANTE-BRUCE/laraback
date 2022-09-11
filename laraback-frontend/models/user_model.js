@@ -1,12 +1,12 @@
 import {Schema,model,models} from 'mongoose'
 const user_schema =new Schema({
-    "User Id":String,
     "Email":String,
-    "Referral Percent":String,
-    "Can Share Earn":String,
-    "Banned":String,
-    "Can Refer And Earn":String,
-    "Cashback":String
+    "Password":String,
+    "Referral Percent":{default:0,type:Number},
+    "Can Share Earn":{default:"yes",type:String},
+    "Banned":{default:"no",type:String},
+    "Can Refer And Earn":{default:"yes",type:String},
+    "Cashback":{default:0,type:Number}
 },
 {timestamps:true})
 

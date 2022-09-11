@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import dynamic from 'next/dynamic'
 import {BsInfoCircle} from 'react-icons/bs'
 import ToggleComponent from './ToggleComponent';
-import { ListBox } from './ListBoxComponent';
+import ListBoxComponent from './ListBoxComponent';
 import DatePickerComponent from './DatePickerComponent';
 
 const EditorComponent=dynamic(()=>import('./EditorComponent'),{ssr:false})
@@ -19,8 +19,8 @@ function LanguageButtonsInput({
   toggleInputAvailable,
   flexRow,
   textEditorAvailable,
-  register,
-  Controller
+  dateValue,setDateValue,
+  setHiddenInputValue
 }) {
     
   return (
@@ -45,7 +45,7 @@ function LanguageButtonsInput({
       {inputAvailable && (
         <input
           type="text"
-          {...register(title)}
+           name={title}
           className={`${flexRow?'p-1':'p-2'} w-full border-2 border-gray-400  ${flexRow && 'h-9 mt-1'} ${!flexRow && 'rounded-md'} ${flexRow?'':'mt-2'}`}
           placeholder={placeholder}
           required
@@ -60,11 +60,11 @@ function LanguageButtonsInput({
       </div>
       )}
       {textAreaAvailable && (
-        <textarea rows={6}{...register(title)}  className="w-full border-2 border-gray-400 p-2 rounded-md" />
+        <textarea rows={6} name={title}  className="w-full border-2 border-gray-400 p-2 rounded-md" />
       )}
       {toggleInputAvailable && (<ToggleComponent name={title} />)}
-      {listBoxAvailable && (<ListBox name={title} />)}
-      {datePickerAvailable && (<DatePickerComponent />)}
+      {listBoxAvailable && (<ListBoxComponent title={title}/>)}
+      {datePickerAvailable && (<DatePickerComponent title={title} setHiddenInputValue={setHiddenInputValue}value={dateValue} setValue={setDateValue} />)}
     </div>
   );
 }

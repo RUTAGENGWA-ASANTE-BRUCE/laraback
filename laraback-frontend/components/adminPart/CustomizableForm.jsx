@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { BsCheckLg } from "react-icons/bs";
 import { VscSaveAll } from "react-icons/vsc";
 import { AiOutlineDesktop } from "react-icons/ai";
@@ -14,7 +14,17 @@ import { useForm, Controller } from "react-hook-form";
 
 
 function CustomizableForm({ routes,formProperties, editFormData }) {
-  const submit=(e)=>{
+  const [fileInputState,setFileInputState]=useState('');
+  const [selectedFile,setSelectedFile]= useState('')
+  const [imageSrc, setImageSrc] = useState();
+  const [previewSource,setPreviewSource]= useState()
+  const [listBoxValue,setListBoxValue]= useState('');
+  const [dateValue,setDateValue]= useState('')
+  const [hiddenInputValue,setHiddenInputValue]=useState()
+  const uploadImage=(base64EncodedImage)=>{
+
+  }
+  const submit=async (e)=>{
     e.preventDefault()
     const dataObject={}
     
@@ -27,6 +37,18 @@ function CustomizableForm({ routes,formProperties, editFormData }) {
         dataObject[title]=e.target[title]?.value
       }
     })
+    if(previewSource) {
+      const formData = new FormData();
+      formData.append('upload_preset', 'laraback');
+      formData.append('file', previewSource);
+      const data = await fetch('https://api.cloudinary.com/v1_1/laraback/image/upload', {
+        method: 'POST',
+        body: formData
+      }).then(r => r.json());
+  
+      setImageSrc(data.secure_url);
+      dataObject['Logo']=imageSrc
+  }
     
     fetch(api,{
       method: 'POST',
@@ -40,10 +62,25 @@ function CustomizableForm({ routes,formProperties, editFormData }) {
     )
     console.log("data",dataObject)
   }
+ 
+
+  const handleFIleInputChange=(e)=>{
+    const file=e.target.files[0];
+    previewFile(file)
+  }
+ 
   const { register, handleSubmit,control } = useForm();
   const onSubmit = data => console.log(data);
+  const previewFile=(file)=>{
+    const reader=new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend=()=>{
+      setPreviewSource(reader.result)
+    }
+  }
   return (
     <form onSubmit={submit}>
+      {hiddenInputValue && <input type="text" name={hiddenInputValue.title} hidden value={hiddenInputValue.value} />}
       <div className="flex flex-rw justify-between mt-5">
         <div className="flex flex-rw space-x-1.5">
           <button type="submit"  className="space-x-2 flex w-fit px-5 bg-violet-900 text-white h-10 rounded-md justify-center items-center">
@@ -75,9 +112,9 @@ function CustomizableForm({ routes,formProperties, editFormData }) {
                 if (element.type === 1) {
                   return (
                     <LanguageButtonsInput
-                    register={register}
-                    Controller={Controller}
-                    control={control} 
+                   setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                    
+                   
                       placeholder={""}
                       inputAvailable
                       title={element.title}
@@ -88,9 +125,9 @@ function CustomizableForm({ routes,formProperties, editFormData }) {
                 } else if (element.type === 2) {
                   return (
                     <LanguageButtonsInput
-                    register={register}
-                    Controller={Controller}
-                    control={control}
+                   setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                    
+                  
                       placeholder={""}
                       title={element.title}
                       inputAvailable
@@ -100,9 +137,9 @@ function CustomizableForm({ routes,formProperties, editFormData }) {
                 } else if (element.type === 3) {
                   return (
                     <LanguageButtonsInput
-                    register={register}
-                    Controller={Controller}
-                    control={control}
+                   setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                    
+                  
                       placeholder={""}
                       title={element.title}
                       inputAvailable
@@ -115,48 +152,55 @@ function CustomizableForm({ routes,formProperties, editFormData }) {
                 else if(element.type === 4) {
                   return(
 
-                  <ImagePicker title={element.title}/>
+                  <ImagePicker previewSource={previewSource} fileInputState={fileInputState} handleFIleInputChange={handleFIleInputChange} title={element.title}/>
                   )
                 }
                 else if (element.type === 5) {
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control} inputAvailable title={element.title} />)
                 }
                 else if (element.type === 6) {
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control} inputAvailable informationIconAvailable title={element.title} />)
                 } 
                 else if (element.type ===7){
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control} inputAvailable title={element.title} subscripted informationIconAvailable/>)
                 }
                 else if (element.type === 8) {
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control} textEditorAvailable informationIconAvailable title={element.title}/>)
                 }
                 else if (element.type ===9){
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control} toggleInputAvailable subscripted  informationIconAvailable title={element.title}/>)
                 }
                 else if (element.type ===10){
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control} toggleInputAvailable subscripted  title={element.title}/>)
                 }
                 else if (element.type ===11){
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control} listBoxAvailable  title={element.title}/>)
                 }
@@ -165,13 +209,15 @@ function CustomizableForm({ routes,formProperties, editFormData }) {
                 }
                 else if (element.type ===13){
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control}  title={element.title} subscripted datePickerAvailable />)
                 }
                 else if (element.type ===14){
                   return (<LanguageButtonsInput
-                  register={register}
+                 setHiddenInputValue={setHiddenInputValue} dateValue={dateValue} setDateValue={setDateValue}
+                  
                   Controller={Controller}
                   control={control}  title={element.title} subscripted textAreaAvailable />)
                 }

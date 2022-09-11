@@ -1,0 +1,80 @@
+[
+  {
+    "Program Id": 0,
+    "Name": "Admitad",
+    "Csv_format": "{TRANSACTIONID},{PROGRAMID},{USERID}",
+    "Post_back": "[{\"AMOUNT\":\"[[[order_sum]]]\"},{\"CLICKID\":\"[[[subid]]]\"},{\"COMMISSION\":\"[[[payment_sum]]]\"},{\"STATUS\":\"[[[payment_status]]]\"},{\"TIME\":\"[[[time]]]\"},{\"TRANSACTIONID\":\"[[[order_id]]]\"}]",
+    "Confirmeds": "Confirmed",
+    "Pendings": "Created",
+    "Declineds": "Declined",
+    "Website": "",
+    "Image": "",
+    "Last_csv_upload": "0000-00-00 00:00:00",
+    "Status": "active"
+  },
+  {
+    "Program Id": 0,
+    "Name": "Independent",
+    "Csv_format": "{DATE},{TRANSACTIONID},{PROGRAMID},{AMOUNT},{COMMISSION},{USERID},{STATUS}",
+    "Post_back": "",
+    "Confirmeds": "Confirmed",
+    "Pendings": "Pending",
+    "Declineds": "Declined",
+    "Website": "http://",
+    "Image": "",
+    "Last_csv_upload": "2021-10-06 14:19:18",
+    "Status": "active"
+  },
+  {
+    "Program Id": 0,
+    "Name": "Inrdeal",
+    "Csv_format": "{TRANSACTIONID},{PROGRAMID},{USERID},{AMOUNT}\t",
+    "Post_back": "[{\"AMOUNT\":\"{sale_amount}\"},{\"CLICKID\":\"{subid1}\"},{\"COMMISSION\":\"{payout}\"},{\"STATUS\":\"{status}\"},{\"TIME\":\"{date}\"},{\"TRANSACTIONID\":\"{trans_id}\"}]",
+    "Confirmeds": "Confirmed",
+    "Pendings": "Pending",
+    "Declineds": "Declined",
+    "Website": "",
+    "Image": "",
+    "Last_csv_upload": "0000-00-00 00:00:00",
+    "Status": "active"
+  },
+  {
+    "Program Id": 0,
+    "Name": "Rakuten",
+    "Csv_format": "{TRANSACTIONID},{PROGRAMID},{USERID}",
+    "Post_back": "{\"1\":\"{TRANSACTIONID}\",\"2\":\"{PROGRAMID}\",\"3\":\"{USERID}\",\"4\":\"{AMOUNT}\",\"5\":\"{COMMISSION}\",\"6\":\"{STATUS}\",\"8\":\"{CLICKID}\"}",
+    "Confirmeds": "Confirmed",
+    "Pendings": "Pending",
+    "Declineds": "Pending",
+    "Website": "http://www.bridewedsgroom.com/",
+    "Image": "",
+    "Last_csv_upload": "0000-00-00 00:00:00",
+    "Status": "active"
+  },
+  {
+    "Program Id": 0,
+    "Name": "Inde",
+    "Csv_format": "{TRANSACTIONID},{STATUS},{AMOUNT}",
+    "Post_back": "",
+    "Confirmeds": "Confirm",
+    "Pendings": "pending",
+    "Declineds": "Declined",
+    "Website": "",
+    "Image": "",
+    "Last_csv_upload": "0000-00-00 00:00:00",
+    "Status": "active"
+  },
+  {
+    "Program Id": 0,
+    "Name": "furstgrabber",
+    "Csv_format": "\"{TRANSACTIONID}\",\"{STATUS}\",\"{AMOUNT}\",\"{COMMISSION}\",\"{PROGRAMID}\",\"UNIBET\",\"{USERID}\"",
+    "Post_back": "[{\"AMOUNT\":\"order_amount\"},{\"CLICKID\":\"subid\"},{\"COMMISSION\":\"commission\"},{\"STATUS\":\"status\"},{\"TIME\":\"transaction_created_time\"},{\"TRANSACTIONID\":\"order_number\"}]",
+    "Confirmeds": "Confirmed",
+    "Pendings": "Pending",
+    "Declineds": "Declined",
+    "Website": "",
+    "Image": "",
+    "Last_csv_upload": "0000-00-00 00:00:00",
+    "Status": "active"
+  }
+]

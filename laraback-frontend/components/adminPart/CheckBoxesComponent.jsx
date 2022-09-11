@@ -9,24 +9,19 @@ export default function CheckBoxesComponent({title,checkBox1,checkBox2,checkBox3
         return;
     }
   return (
-    <div className="flex flex-row space-x-1.5 mt-2">
+    <div className="flex flex-row space-x-3 mt-2">
       <h6 className="text-lg mt-2 font-semibold">
         {title}
         {subscripted && <sup className="text-bold">*</sup>}
 
       </h6>
-      <div className="flex flex-row space-x-0.5">
+      <div className="flex flex-row space-x-1">
         <p className="text-lg mt-2">{checkBox1}</p>
-        <Checkbox onChange={onChange} color="success" />
-      </div>
-      <div className="flex flex-row space-x-0.5">
+  <input type="radio" id="vehicle1" name={title} className="h-5 w-5 mt-3" value={checkBox1}/>    </div>
+      <div className="flex flex-row space-x-1">
         <p className="text-lg mt-2">{checkBox2}</p>
-        <Checkbox onChange={onChange} defaultChecked color="success" />
-      </div>
-      <div className="flex flex-row space-x-0.5">
-        <p className="text-lg mt-2">{checkBox3}</p>
-        <Checkbox onChange={onChange}  color="success" />
-      </div>
+  <input type="radio" id="vehicle1" name={title} className="h-5 w-5 mt-3" value={checkBox2}/>    </div>
+       
     </div>
   );
 }

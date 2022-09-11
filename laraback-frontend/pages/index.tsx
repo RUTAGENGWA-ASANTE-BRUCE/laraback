@@ -1,14 +1,18 @@
-// import type { NextPage } from 'next'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import HomePage from "../../components/HomePage"
+import {useEffect,useState} from 'react'
+import HomePage from "../components/HomePage"
 // import '../../styles/globals.css'
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
-const Home= () => {
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import { GetServerSideProps } from 'next'
+
+const Home:NextPage= ({userData}) => {
+ 
   return (
     <div className="">
-        {/* <head>
+        <head>
           <title>Laraback</title>
           <link
   rel="stylesheet"
@@ -21,13 +25,16 @@ const Home= () => {
   href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
 />
         </head>
-        <main> */}
+        <main>
           <Header />
-          <HomePage />
+          <HomePage  />
           <Footer />
-        {/* </main> */}
+        </main>
     </div>
   )
 }
 
 export default Home
+export const getServerSideProps:GetServerSideProps=async({ req, res })=> {
+  return { props: { userData: req.cookies.userData || "" } };
+}

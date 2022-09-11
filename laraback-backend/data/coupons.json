@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Myntra sale",
+    "description": "Magzter is a cross-platform, self-service, global digital magazine newsstand with over 8,000 magazines from 3,400+ publishers.Magzter was founded in 2011. The Company headquartered in NEW YORK. Magzter GOLD is an all-you-can-read model where users will get unlimited access to 5,000+ Magazines and Premium Articles for just Rs.3999 for a 3 year subscription (Original Price Rs.11,997)",
+    "code": "INDIA2012",
+    "link": "https://coupon.com",
+    "status": "active",
+    "exclusive": "0",
+    "trending_sale": 1,
+    "start_date": "2021-01-01 10:00:00",
+    "user_id": "",
+    "end_date": "2021-12-12 08:30:00",
+    "added": "2021-09-29 11:28:55",
+    "coupon_end_date": "",
+    "sort_order": "2",
+    "retailer_id": 1,
+    "viewed": 0
+  },
+  {
+    "title": "Deal Of the Day",
+    "description": "Get upto 50% off on fully automatic top load washing machines.<br />\r\nFlipkart Offer Valid for All Users.<br />\r\nValid on all payment methods.<br />\r\nHow to avail Deal : 1. Click on Get Deal 2. Purchase discounted products from the landing page.",
+    "code": "MAg",
+    "link": "https://www.coupinko.com",
+    "status": "active",
+    "exclusive": "0",
+    "trending_sale": 0,
+    "start_date": "2021-10-18 00:00:00",
+    "user_id": "0",
+    "end_date": "2022-10-10 00:00:00",
+    "added": "2021-10-18 11:00:00",
+    "coupon_end_date": "",
+    "sort_order": "6",
+    "retailer_id": 4,
+    "viewed": 0
+  }
+]

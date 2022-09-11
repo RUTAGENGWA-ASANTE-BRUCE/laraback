@@ -9,11 +9,13 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 
-export default function DatePickerComponent() {
-  const [value, setValue] = React.useState(dayjs('2014-08-18T21:11:54'));
+
+export default function DatePickerComponent({title,value,setValue,setHiddenInputValue}) {
 
   const handleChange = (newValue) => {
+    setHiddenInputValue({title,value:newValue["$D"]+"/"+(Number(newValue["$M"])+1)+"/"+newValue["$y"]});
     setValue(newValue);
+    console.log(newValue["$D"]+"/"+(Number(newValue["$M"])+1)+"/"+newValue["$y"]);
   };
 
   return (

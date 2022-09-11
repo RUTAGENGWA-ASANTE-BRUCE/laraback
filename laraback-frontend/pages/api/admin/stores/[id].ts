@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import connectMongo from "../../../../utils/connectMongo";
-import store_cashback from "../../../../models/store_cashback_model";
+import store from "../../../../models/store_model";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   const {
@@ -12,7 +12,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
   switch (method) {
     case "GET":
       try {
-        const document = await store_cashback.findById(id);
+        const document = await store.findById(id);
         if (!document)
           return res.status(404).json({ msg: "The document does not exist" });
         return res.status(200).json(document);
@@ -21,7 +21,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       }
     case "DELETE":
       try {
-        const deleteDocument = await store_cashback.findByIdAndDelete(id);
+        const deleteDocument = await store.findByIdAndDelete(id);
         if (!deleteDocument)
           return res.status(404).json({ msg: "The document does not exist" });
         return res.status(204).json();
@@ -30,7 +30,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       }
     case "PUT":
       try {
-        const updatedDocument = await store_cashback.findByIdAndUpdate(
+        const updatedDocument = await store.findByIdAndUpdate(
           id,
           body,
           {

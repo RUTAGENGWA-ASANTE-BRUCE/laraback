@@ -1,6 +1,6 @@
 import  { NextApiRequest, NextApiResponse } from 'next'
 import connectMongo from '../../../../utils/connectMongo'
-import store_cashback from '../../../../models/store_cashback_model'
+import store from '../../../../models/store_model'
 
 export default async function (
   req:NextApiRequest,
@@ -11,7 +11,7 @@ export default async function (
   switch (method) {
     case "GET":
       try{
-        const documents=await store_cashback.find()
+        const documents=await store.find()
         return res.status(200).json(documents);
       }  
       catch (error){
@@ -19,7 +19,7 @@ export default async function (
       }
     case "POST":
         try {
-          const newDocument=new store_cashback(body);
+          const newDocument=new store(body);
           const saveDocument=await newDocument.save();
           return res.status(200).json(saveDocument)          
         } catch (error) {

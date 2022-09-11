@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FunctionalityCard from "./FunctionalityCard";
 import AuthForm from "./AuthForm";
 import BlackFridayImage from "../public/blackblow.png";
@@ -7,12 +7,14 @@ import Store from "./Store";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { BsGift } from "react-icons/bs";
 import OfferCard2 from "./OfferCard2";
-import { deals, functionalities, offers, ourCV, stores } from "../data";
+import { deals, functionalities, offers, ourCV } from "../data";
 import DealCard from "./DealCard";
 import advertCard1 from "../public/advertCard1.png";
 import advertCard2 from "../public/advertCard2.png";
 import advertCard3 from "../public/advertCard3.png";
 import Image from "next/image";
+import { selectUserData, setUserData } from "../utils/redux/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 var settings = {
   dots: true,
   infinite: true,
@@ -61,8 +63,9 @@ const headings = {
     },
   ],
 };
-
-function HomePage() {
+//
+function HomePage({ message }) {
+  const dispatch = useDispatch();
   const [selectedStoreHeading, setSelectedStoreHeading] = useState(
     headings.store[0]
   );
@@ -72,6 +75,24 @@ function HomePage() {
   const [selectedDealHeading, setSelectedDealHeading] = useState(
     headings.deal[0]
   );
+  const [coupons, setCoupons] = useState();
+  const [stores, setStores] = useState();
+  useEffect(() => {
+    const getData = async () => {
+      await fetch("/api/admin/stores", { method: "GET" })
+        .then((res) => res.json())
+        .then((data) => setStores(data));
+      await fetch("/api/admin/coupon_&_offers", { method: "GET" })
+        .then((res) => res.json())
+        .then((data) => {
+          setCoupons(data);
+          console.log("Coupons===============", data);
+        });
+    };
+    getData();
+  }, []);
+
+  // const message=useSelector(selectUserData);
 
   return (
     <div className=" bg-orange-50  min-h-screen">
@@ -79,7 +100,7 @@ function HomePage() {
         <div className="w-[100%] md:w-[65%] pt-20">
           <div>
             <h1 className=" text-[35px] md:text-[45px] font-semibold  text-orange-400 mt-3">
-              Get up to 40% Cashback at over 2,500 stores
+              Get up to 40% Cashback at over 2,500 stores {message}
             </h1>
             <p className="mt-2 font-light">
               1620 Free Coupon Codes & Discount Deals added this week
@@ -102,34 +123,36 @@ function HomePage() {
             ))}
           </div>
         </div>
+        {/* {props.userData == "" &&  */}
         <AuthForm />
+        {/* } */}
 
-      <svg
-        className="absolute -bottom-1 z-20"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
-        <path
-          fill="rgb(233 213 255)"
-          fill-opacity="1"
-          d="M0,224L48,234.7C96,245,192,267,288,282.7C384,299,480,309,576,288C672,267,768,213,864,197.3C960,181,1056,203,1152,176C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
+        <svg
+          className="absolute -bottom-1 z-20"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="rgb(233 213 255)"
+            fill-opacity="1"
+            d="M0,224L48,234.7C96,245,192,267,288,282.7C384,299,480,309,576,288C672,267,768,213,864,197.3C960,181,1056,203,1152,176C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
       </div>
       <div className="p-4">
         <div className="flex flex-wrap space-y-2 flex-row mt-10">
-        <div className="w-[100%] md:w-[70%] h-96 relative">
-
-          <Image
-            src={BlackFridayImage}  layout='fill'
-          />
-        </div>
+          <div className="w-[100%] md:w-[70%] h-96 relative">
+            <Image src={BlackFridayImage} layout="fill" />
+          </div>
           <div className="flex flex-col w-[100%] md:w-[25%] mx-auto md:pb-0 pb-10 border border-purple-900 rounded-md bg-white">
             <p className="py-2 text-center text-yellow-500  border-b">
               Offer Of The Day
             </p>
-
-            <SliderComponent />
+            {coupons && offers ? (
+              <SliderComponent coupons={coupons} stores={stores} />
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className="mt-12 ">
@@ -156,9 +179,8 @@ function HomePage() {
             Browse the cashback offers from top store and enjoy the discount!
           </p>
           <div className="flex flex-row flex-wrap pt-5 gap-2.5">
-            {stores.map((store) => (
-              <Store company={store} key={store.image} />
-            ))}
+            {stores &&
+              stores.map((store) => <Store store={store} key={store._id} />)}
           </div>
         </div>
         <button className="rounded-md mt-8  font-semibold transition-all  border-2  text-black duration-700 transform  hover:text-white hover:bg-purple-800  h-12 w-full ">
@@ -188,9 +210,15 @@ function HomePage() {
           </div>
         </div>
         <div className="flex flex-row flex-wrap pt-4 gap-4">
-          {offers.map((offer) => (
-            <OfferCard2 key={offer.companyImage} offer={offer} />
-          ))}
+          {coupons &&
+            coupons.map((coupon) => {
+              const store = stores.find(
+                (store) => store._id == coupon["Store Id"]
+              );
+              return (
+                <OfferCard2 key={coupon._id} store={store} coupon={coupon} />
+              );
+            })}
         </div>
         <button className="rounded-md mt-8  font-semibold transition-all  border-2  text-black duration-700 transform  hover:text-white hover:bg-purple-800  h-12 w-full ">
           View More Health & Beauty Coupons{" "}
@@ -231,9 +259,15 @@ function HomePage() {
           <FaLongArrowAltRight className=" inline-flex" />
         </button>
         <div className="flex flex-row justify-between mt-10 w-full">
-         <div className="h-[450px] w-[30%]  relative"><Image src={advertCard1}   layout='fill' objectFit='contain'/> </div>
-         <div className="h-[450px] w-[30%] relative "><Image src={advertCard2}    layout='fill' objectFit='contain'/> </div>
-         <div className="h-[450px] w-[30%]  relative"><Image src={advertCard3}  layout='fill' objectFit='contain' /> </div>
+          <div className="h-[450px] w-[30%]  relative">
+            <Image src={advertCard1} layout="fill" objectFit="contain" />{" "}
+          </div>
+          <div className="h-[450px] w-[30%] relative ">
+            <Image src={advertCard2} layout="fill" objectFit="contain" />{" "}
+          </div>
+          <div className="h-[450px] w-[30%]  relative">
+            <Image src={advertCard3} layout="fill" objectFit="contain" />{" "}
+          </div>
         </div>
         <div className=" mt-10 bg-purple-50 flex flex-row justify-between border-2 border-purple-200 p-5 rounded-md">
           <div className="flex flex-row">
@@ -374,5 +408,20 @@ function HomePage() {
     </div>
   );
 }
+
+export const getServerSideProps = (context) => {
+  try {
+    return {
+      props: { message: "supppppppppppp" },
+      // notFound: object ? false : true,
+      // redirect: {
+      //     destination: '/',
+      //     permanent: true
+      // }
+    };
+  } catch (error) {
+    return { props: { errorCode: 403, message: "broken" } };
+  }
+};
 
 export default HomePage;

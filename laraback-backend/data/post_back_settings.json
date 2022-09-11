@@ -1,0 +1,38 @@
+[
+  {
+    "setting_key": "Transaction_Id",
+    "setting_value": "TRANSACTIONID",
+    "field_value": "",
+    "status": 1
+  },
+  {
+    "setting_key": "time",
+    "setting_value": "TIME",
+    "field_value": "",
+    "status": 1
+  },
+  {
+    "setting_key": "Amount_Sold",
+    "setting_value": "AMOUNT",
+    "field_value": "",
+    "status": 1
+  },
+  {
+    "setting_key": "Commision",
+    "setting_value": "COMMISSION",
+    "field_value": "",
+    "status": 1
+  },
+  {
+    "setting_key": "Status",
+    "setting_value": "STATUS",
+    "field_value": "",
+    "status": 1
+  },
+  {
+    "setting_key": "click_id",
+    "setting_value": "CLICKID",
+    "field_value": "",
+    "status": 1
+  }
+]

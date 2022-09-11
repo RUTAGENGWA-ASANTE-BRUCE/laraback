@@ -5,24 +5,19 @@ import TabbedComponent from "../../components/adminPart/TabbedComponent";
 import CustomizableForm from "../../components/adminPart/CustomizableForm";
 import MenuBuilder from "../../components/adminPart/MenuGenerator";
 const affiliate_network_keys = [
- 'Name',
- "Affiliate Id",
- "Confirm Duration",
- "Enabled",
- "Default Currnecy",
- "Updated At"
+    "Program Id",
+    "Name",
+    "Csv_format",
+    "Post_back",
+    "Confirmeds",
+    "Pendings",
+    "Declineds",
+    "Website",
+    "Image",
+    "Last_csv_upload",
+    "Enabled"
 ];
-const store_cashback_keys = [
-  "address",
-  "cashback_method",
-  "city",
-  "country",
-  "paypal_email",
-  "state",
-  "user_id",
-  "venmo_username",
-  "zip",
-];
+
 const store_categories_keys = [
   "category_url",
   "description",
@@ -35,20 +30,14 @@ const store_categories_keys = [
   "sort_order",
 ];
 const coupon_keys = [
-  "added",
-  "code",
-  "coupon_end_date",
-  "description",
-  "end_date",
-  "exclusive",
-  "link",
-  "retailer_id",
-  "sort_order",
-  "start_date",
-  "status",
-  "title",
+  "Title",
+  "Coupon End Date",
+  "Description",
+  "Code",
+  "Link",
+  "Store Id",
+  "Status",
   "trending_sale",
-  "user_id",
   "viewed",
 ];
 const retailer_to_category_keys = [
@@ -64,10 +53,10 @@ const campaign_keys = [
   "Campaign Name",
   "Campaign Status",
   "Status",
-  "Updated At"
+  "Updated At",
 ];
 
-const page_content_keys=[
+const page_content_keys = [
   "description",
   "language",
   "link_title",
@@ -77,66 +66,39 @@ const page_content_keys=[
   "name",
   "page_location",
   "page_url",
-  "status"
-]
-const content_block_keys=[
-  'Name',
-  'Purpose',
-  'Updated At'
-]
+  "status",
+];
+const content_block_keys = ["Name", "Purpose", "Updated At"];
 
-const user_dashboard_page_keys=[
+const user_dashboard_page_keys = [
   "Module",
   "title",
   "Menu Name",
   "Sort Order",
-  "Enabled"
-]
-const daily_deal_keys=[
-  'title',
-  'store',
-  'offer price',
-  'is featured',
-  'expiry date',
-  'clicks',
-  'visits',
-  'status',
-  'updated at'
-]
-const deals_category_keys=[
-  'name',
-  'is featured',
-  'visits',
-  'updated at'
-]
+  "Enabled",
+];
+const daily_deal_keys = [
+  "title",
+  "store",
+  "offer price",
+  "is featured",
+  "expiry date",
+  "clicks",
+  "visits",
+  "status",
+  "updated at",
+];
+const deals_category_keys = ["name", "is featured", "visits", "updated at"];
 
-const instaback_offer_keys=[
-  'title',
-  'link',
-  'status',
-  'updated at'
-]
+const instaback_offer_keys = ["title", "link", "status", "updated at"];
 
-const footer_keys=[
-  'Title',
-  'Footer Type',
-  'Sort Order'
-]
+const footer_keys = ["Title", "Footer Type", "Sort Order"];
 
-const faq_keys=[
-  'Title',
-  'Category',
-  'Sort Order',
-  'Updated At'
-]
-const faq_category_keys=[
-  'Title',
-  'link',
-  'Updated At'
-]
+const faq_keys = ["Title", "Category", "Sort Order", "Updated At"];
+const faq_category_keys = ["Title", "link", "Updated At"];
 
-const campaign_rate_keys=[
-  'Network',
+const campaign_rate_keys = [
+  "Network",
   "Network Campagn Id",
   "Campaign Id",
   "Name",
@@ -144,9 +106,9 @@ const campaign_rate_keys=[
   "Amount",
   "Base Amount",
   "Currency",
-  "Updated At"
-]
-const postback_log_keys=[
+  "Updated At",
+];
+const postback_log_keys = [
   "Network",
   "Network Campaign",
   "Sales Date",
@@ -154,34 +116,34 @@ const postback_log_keys=[
   "Currency",
   "Sale Status",
   "Aff Sub1",
-  "Updated At"
-]
+  "Updated At",
+];
 
-const network_run_keys=[
+const network_run_keys = [
   "Network",
   "Type",
   "Entries",
   "Start Time",
-  "End Time"
-]
-const network_coupon_keys=[
+  "End Time",
+];
+const network_coupon_keys = [
   "Network Id",
   "Title",
   "Initialize",
   "Exclusive",
-  "Updated At"
-]
+  "Updated At",
+];
 
-const network_api_log_keys=[
+const network_api_log_keys = [
   "Network",
   "Endpoint",
   "Request Method",
   "Url",
   "Response Status",
-  "Updated At"
-]
+  "Updated At",
+];
 
-const manual_sales_import_keys=[
+const manual_sales_import_keys = [
   "Network Id",
   "Network Campaign",
   "Transaction Id",
@@ -191,27 +153,20 @@ const manual_sales_import_keys=[
   "Status",
   "Aff Sub1",
   "Updated At",
-  
-]
+];
 
-const click_log_keys=[
-  "Click Id",
-  "Click Code",
-  "Click Time",
+const click_log_keys = [
   "Store",
   "User",
   "Cashback Enabled",
   "Cashback Percent",
   "Referral Percent",
-  "Can Claim",
   "User Cashback Id",
-  "Source Type",
-  "Source Id",
   "Ip Address",
-  "Http Referrer"
-]
+  "Http Referrer",
+];
 
-const custom_condition_keys=[
+const custom_condition_keys = [
   "Store",
   "Minimun Order Amount",
   "Cashback Amount",
@@ -219,9 +174,9 @@ const custom_condition_keys=[
   "End Date",
   "Enabled",
   "Priority",
-  "Updated At"
-]
-const sales_transaction_keys=[
+  "Updated At",
+];
+const sales_transaction_keys = [
   "Network",
   "Network Campaign Id",
   "Transaction Id",
@@ -229,10 +184,10 @@ const sales_transaction_keys=[
   "Commission Amount",
   "Currency",
   "Status",
-  "Aff1 Sub1"
-]
+  "Aff1 Sub1",
+];
 
-const referral_transaction_keys=[
+const referral_transaction_keys = [
   "Sales Id",
   "User",
   "Shooper",
@@ -240,11 +195,10 @@ const referral_transaction_keys=[
   "Referral Amount",
   "Currency",
   "Status",
-  "Updated At"
-]
+  "Updated At",
+];
 
-
-const cashback_transaction_keys=[
+const cashback_transaction_keys = [
   "user",
   "Network",
   "Store",
@@ -253,19 +207,19 @@ const cashback_transaction_keys=[
   "Status",
   "Lock Cashback Status",
   "Lock Cashback Amount",
-]
+];
 
-const bonus_transaction_keys=[
+const bonus_transaction_keys = [
   "User",
   "Bonus",
   "Amount",
   "Awarded On",
   "Expires On",
   "Status",
-  "Updated At"
-]
+  "Updated At",
+];
 
-const payment_mode_keys=[
+const payment_mode_keys = [
   "Name",
   "Minimun Amount",
   "Minimum Amount First",
@@ -275,9 +229,9 @@ const payment_mode_keys=[
   "Account Name",
   "Payment Speed",
   "Enabled",
-  "Updatet At"
-]
-const user_keys=[
+  "Updatet At",
+];
+const user_keys = [
   "User Id",
   "Email",
   "Referral Percent",
@@ -285,9 +239,9 @@ const user_keys=[
   "Banned",
   "Can Refer And Earn",
   "Created At",
-  "Cashback"
-]
-const missing_cb_claim_keys=[
+  "Cashback",
+];
+const missing_cb_claim_keys = [
   "User",
   "Click Id",
   "Store",
@@ -301,9 +255,9 @@ const missing_cb_claim_keys=[
   "Order Id",
   "Currency",
   "User Message",
-  "Admin Note"
-]
-const withdrawal_request_keys=[
+  "Admin Note",
+];
+const withdrawal_request_keys = [
   "Payment Id",
   "User",
   "Method Code",
@@ -312,75 +266,57 @@ const withdrawal_request_keys=[
   "Status",
   "Note",
   "Paid At",
-  "Updated At"
-]
+  "Updated At",
+];
 
-const user_favorite_keys=[
-  "Id",
-  "Name",
-  "Users List"
-]
+const user_favorite_keys = ["Id", "Name", "Users List"];
 
-const share_earn_link_keys=[
+const share_earn_link_keys = [
   "User",
   "Code",
   "Store",
   "Clicks",
   "Earnings",
-  "Created At"
-]
+  "Created At",
+];
 
-const contact_form_keys=[
-  "Name",
-  "Email",
-  "Reason",
-  "Updated At"
-]
+const contact_form_keys = ["Name", "Email", "Reason", "Updated At"];
 
-const seo_url_redirect_keys=[
-  "Old Url",
-  "New Url",
-  "Status"
-]
-const email_template_keys=[
+const seo_url_redirect_keys = ["Old Url", "New Url", "Status"];
+const email_template_keys = [
   "Name",
   "Subject",
   "Template",
   "View Name",
-  "Updated At"
-]
+  "Updated At",
+];
 
-const sitemap_keys=[
+const sitemap_keys = [
   "Module",
   "Slug",
   "Frequency",
   "Priority",
   "Enabled",
-  "Last Updated"
-]
-const currency_master_keys=[
+  "Last Updated",
+];
+const currency_master_keys = [
   "Name",
   "Iso Code",
   "Symbol",
   "Conversion Rate",
   "Enabled",
   "Is Primary",
-  "Dispal As"
-]
+  "Dispal As",
+];
 
-const country_master_keys=[
+const country_master_keys = [
   "Name",
   "Dial Code",
   "Code",
   "Enable OTP",
-  "Enabled"
-]
-const language_master_keys=[
-  "Id",
-  "Name",
-  "Code",
-  "Enabled"
-]
+  "Enabled",
+];
+const language_master_keys = ["Id", "Name", "Code", "Enabled"];
 const tableRows = [
   {
     id: 1,
@@ -504,60 +440,102 @@ const makeForm = (model, data) => {
   };
   model.forEach((element) => {
     const files = ["photo", "Image", "logo"];
-    const dropDowns = ["category", "country","Store","User"];
-    const toggles=['Banned']
-    const checkBoxes=['Closed By',"Platform"]
-    const textAreas=[ "User Message","Admin Note"]
-    const notTranslatable = ["url","Iso Code","Dial Code","Conversion Rate","Symbol","Users List","Earnings","Clicks","Code","Method Code","Account",'Url',"Email","Cashback","Currency",'Endpoint',"Frequency","Module","View Name","Template",'Request Method',"Minimum Amount First",'page_url', "Page", "Priority","Slug",'Response Status',"Referral Percent",
-    "Source Type",
-    "Source Id",
-    "Ip Address",
-    "Http Referrer"];
+    const dropDowns = ["category", "country", "Store", "User","Networks","Store Id"];
+    const toggles = ["Banned"];
+    const checkBoxes = ["Closed By", "Platform"];
+    const textAreas = ["User Message", "Admin Note"];
+    const notTranslatable = [
+      "Link",
+      "url",
+      "Iso Code",
+      "Dial Code",
+      "Conversion Rate",
+      "Symbol",
+      "Users List",
+      "Earnings",
+      "Clicks",
+      "Code",
+      "Method Code",
+      "Account",
+      "Url",
+      "Email",
+      "Cashback",
+      "Currency",
+      "Endpoint",
+      "Frequency",
+      "Module",
+      "View Name",
+      "Template",
+      "Request Method",
+      "Minimum Amount First",
+      "page_url",
+      "Page",
+      "Priority",
+      "Slug",
+      "Response Status",
+      "Referral Percent",
+      "Source Type",
+      "Source Id",
+      "Ip Address",
+      "Http Referrer",
+    ];
     if (files.includes(element)) {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 4,
       });
-    } else if (element.slice(-6) == "Status" || checkBoxes.includes(element) ) {
+    } else if (element.slice(-6) == "Status" || checkBoxes.includes(element)) {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 12,
-        checkBox1: "Publish",
-        checkBox2: "Draft",
-        checkBox3: "trash",
+        checkBox1: "Active",
+        checkBox2: "Not Active",
       });
     } else if (dropDowns.includes(element)) {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 11,
       });
-      
-    } else if (element.slice(-3) == "able" || element.slice(-5) == "abled" ||  element.slice(0,3) == "Is " ||  element.slice(-3) == "red" || element.slice(0,6) == "Enable"|| element.slice(0,3) == "Can" || element.slice(-7) == "Allowed"|| toggles.includes(element)) {
+    } else if (
+      element.slice(-3) == "able" ||
+      element.slice(-5) == "abled" ||
+      element.slice(0, 3) == "Is " ||
+      element.slice(-3) == "red" ||
+      element.slice(0, 6) == "Enable" ||
+      element.slice(0, 3) == "Can" ||
+      element.slice(-7) == "Allowed" ||
+      toggles.includes(element)
+    ) {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 9,
       });
-    } 
-    else if (element.slice(-4) == "time" || element.slice(-4) == "Time" || element.slice(-4) == "Date") {
+    } else if (
+      element.slice(-4) == "time" ||
+      element.slice(-4) == "Time" ||
+      element.slice(-4) == "Date"
+    ) {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 13,
       });
-    } 
-    else if (notTranslatable.includes(element) || element.slice(-2) == "Id" || element.slice(-3) == "Url"  || element.slice(-2) == "At"   || element.slice(-6) == "Amount") {
+    } else if (
+      notTranslatable.includes(element) ||
+      element.slice(-2) == "Id" ||
+      element.slice(-3) == "Url" ||
+      element.slice(-2) == "At" ||
+      element.slice(-6) == "Amount"
+    ) {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 2,
       });
-    }
-    else if (textAreas.includes(element)) {
+    } else if (textAreas.includes(element)) {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 14,
       });
-    }
-    
-    else {
+    } else {
       formProperties.formSections[0].elements.push({
         title: element,
         type: 1,
@@ -697,7 +675,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(affiliate_network_keys)}
             />
           }
@@ -718,7 +697,10 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params} formProperties={makeForm(store_cashback_keys)} />
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(store_cashback_keys)}
+            />
           }
         />
       );
@@ -737,7 +719,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(store_categories_keys)}
             />
           }
@@ -757,7 +740,12 @@ function Admin() {
       return (
         <AdminComponent
           routes={params}
-          form={<CustomizableForm routes={params} formProperties={makeForm(coupon_keys)} />}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(coupon_keys)}
+            />
+          }
         />
       );
     }
@@ -772,7 +760,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(retailer_to_category_keys)}
             />
           }
@@ -793,7 +782,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(daily_deal_keys)}
             />
           }
@@ -814,7 +804,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(deals_category_keys)}
             />
           }
@@ -835,7 +826,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(campaign_keys)}
             />
           }
@@ -856,7 +848,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(page_content_keys)}
             />
           }
@@ -873,15 +866,7 @@ function Admin() {
   }
   if (params[0] == "menu_builder") {
     if (params[1] == "form") {
-      return (
-        <AdminComponent
-          routes={params}
-          form={
-            <MenuBuilder
-            />
-          }
-        />
-      );
+      return <AdminComponent routes={params} form={<MenuBuilder />} />;
     }
 
     return (
@@ -897,7 +882,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(content_block_keys)}
             />
           }
@@ -918,7 +904,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(instaback_offer_keys)}
             />
           }
@@ -939,7 +926,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(user_dashboard_page_keys)}
             />
           }
@@ -960,7 +948,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(footer_keys)}
             />
           }
@@ -969,10 +958,7 @@ function Admin() {
     }
 
     return (
-      <AdminComponent
-        routes={params}
-        tableData={makeTableData(footer_keys)}
-      />
+      <AdminComponent routes={params} tableData={makeTableData(footer_keys)} />
     );
   }
   if (params[0] == "faq") {
@@ -981,7 +967,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(faq_keys)}
             />
           }
@@ -990,10 +977,7 @@ function Admin() {
     }
 
     return (
-      <AdminComponent
-        routes={params}
-        tableData={makeTableData(faq_keys)}
-      />
+      <AdminComponent routes={params} tableData={makeTableData(faq_keys)} />
     );
   }
   if (params[0] == "faq_categories") {
@@ -1002,7 +986,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(faq_category_keys)}
             />
           }
@@ -1023,7 +1008,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(campaign_rate_keys)}
             />
           }
@@ -1044,7 +1030,8 @@ function Admin() {
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(postback_log_keys)}
             />
           }
@@ -1059,14 +1046,14 @@ function Admin() {
       />
     );
   }
-  if
-   (params[0] == "network_run") {
+  if (params[0] == "network_run") {
     if (params[1] == "form") {
       return (
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(network_run_keys)}
             />
           }
@@ -1081,14 +1068,14 @@ function Admin() {
       />
     );
   }
-  if
-   (params[0] == "network_coupons") {
+  if (params[0] == "network_coupons") {
     if (params[1] == "form") {
       return (
         <AdminComponent
           routes={params}
           form={
-            <CustomizableForm routes={params}
+            <CustomizableForm
+              routes={params}
               formProperties={makeForm(network_coupon_keys)}
             />
           }
@@ -1103,490 +1090,472 @@ function Admin() {
       />
     );
   }
-  if
-  (params[0] == "network_api_log") {
-   if (params[1] == "form") {
-     return (
-       <AdminComponent
-         routes={params}
-         form={
-           <CustomizableForm routes={params}
-             formProperties={makeForm(network_api_log_keys)}
-           />
-         }
-       />
-     );
-   }
+  if (params[0] == "network_api_log") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(network_api_log_keys)}
+            />
+          }
+        />
+      );
+    }
 
-   return (
-     <AdminComponent
-       routes={params}
-       tableData={makeTableData(network_api_log_keys)}
-     />
-   );
- }
- if
- (params[0] == "manual_sales_import") {
-  if (params[1] == "form") {
     return (
       <AdminComponent
         routes={params}
-        form={
-          <CustomizableForm routes={params}
-            formProperties={makeForm(manual_sales_import_keys)}
-          />
-        }
+        tableData={makeTableData(network_api_log_keys)}
+      />
+    );
+  }
+  if (params[0] == "manual_sales_import") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(manual_sales_import_keys)}
+            />
+          }
+        />
+      );
+    }
+
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(manual_sales_import_keys)}
+      />
+    );
+  }
+  if (params[0] == "click_log") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(click_log_keys)}
+            />
+          }
+        />
+      );
+    }
+
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(click_log_keys)}
+      />
+    );
+  }
+  if (params[0] == "custom_conditions") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(custom_condition_keys)}
+            />
+          }
+        />
+      );
+    }
+
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(custom_condition_keys)}
+      />
+    );
+  }
+  if (params[0] == "sales_transactions") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(sales_transaction_keys)}
+            />
+          }
+        />
+      );
+    }
+
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(sales_transaction_keys)}
+      />
+    );
+  }
+  if (params[0] == "referral_transactions") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(referral_transaction_keys)}
+            />
+          }
+        />
+      );
+    }
+
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(referral_transaction_keys)}
+      />
+    );
+  }
+  if (params[0] == "cashback_transactions") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(cashback_transaction_keys)}
+            />
+          }
+        />
+      );
+    }
+
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(cashback_transaction_keys)}
+      />
+    );
+  }
+  if (params[0] == "bonus_transactions") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(bonus_transaction_keys)}
+            />
+          }
+        />
+      );
+    }
+
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(bonus_transaction_keys)}
       />
     );
   }
 
-  return (
-    <AdminComponent
-      routes={params}
-      tableData={makeTableData(manual_sales_import_keys)}
-    />
-  );
-}
-if
-(params[0] == "click_log") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(click_log_keys)}
-         />
-       }
-     />
-   );
- }
+  if (params[0] == "payment_modes") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(payment_mode_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(click_log_keys)}
-   />
- );
-}
-if
-(params[0] == "custom_conditions") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(custom_condition_keys)}
-         />
-       }
-     />
-   );
- }
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(payment_mode_keys)}
+      />
+    );
+  }
+  if (params[0] == "users") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(user_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(custom_condition_keys)}
-   />
- );
-}
-if
-(params[0] == "sales_transactions") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(sales_transaction_keys)}
-         />
-       }
-     />
-   );
- }
+    return (
+      <AdminComponent routes={params} tableData={makeTableData(user_keys)} />
+    );
+  }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(sales_transaction_keys)}
-   />
- );
-}
-if
-(params[0] == "referral_transactions") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(referral_transaction_keys)}
-         />
-       }
-     />
-   );
- }
+  if (params[0] == "missing_cb_claims") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(missing_cb_claim_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(referral_transaction_keys)}
-   />
- );
-}
-if
-(params[0] == "cashback_transactions") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(cashback_transaction_keys)}
-         />
-       }
-     />
-   );
- }
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(missing_cb_claim_keys)}
+      />
+    );
+  }
+  if (params[0] == "withdrawal_requests") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(withdrawal_request_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(cashback_transaction_keys)}
-   />
- );
-}
-if
-(params[0] == "bonus_transactions") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(bonus_transaction_keys)}
-         />
-       }
-     />
-   );
- }
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(withdrawal_request_keys)}
+      />
+    );
+  }
+  if (params[0] == "user_favorites") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(user_favorite_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(bonus_transaction_keys)}
-   />
- );
-}
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(user_favorite_keys)}
+      />
+    );
+  }
+  if (params[0] == "share_&_earn_links") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(share_earn_link_keys)}
+            />
+          }
+        />
+      );
+    }
 
-if
-(params[0] == "payment_modes") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(payment_mode_keys)}
-         />
-       }
-     />
-   );
- }
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(share_earn_link_keys)}
+      />
+    );
+  }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(payment_mode_keys)}
-   />
- );
-}
-if
-(params[0] == "users") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(user_keys)}
-         />
-       }
-     />
-   );
- }
+  if (params[0] == "contact_form") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(contact_form_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(user_keys)}
-   />
- );
-}
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(contact_form_keys)}
+      />
+    );
+  }
+  if (params[0] == "settings") {
+    return <AdminComponent routes={params} form={<TabbedComponent />} />;
+  }
 
-if
-(params[0] == "missing_cb_claims") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(missing_cb_claim_keys)}
-         />
-       }
-     />
-   );
- }
+  if (params[0] == "seo_url_redirect") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(seo_url_redirect_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(missing_cb_claim_keys)}
-   />
- );
-}
-if
-(params[0] == "withdrawal_requests") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(withdrawal_request_keys)}
-         />
-       }
-     />
-   );
- }
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(seo_url_redirect_keys)}
+      />
+    );
+  }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(withdrawal_request_keys)}
-   />
- );
-}
-if
-(params[0] == "user_favorites") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(user_favorite_keys)}
-         />
-       }
-     />
-   );
- }
+  if (params[0] == "email_templates") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(email_template_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(user_favorite_keys)}
-   />
- );
-}
-if
-(params[0] == "share_&_earn_links") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(share_earn_link_keys)}
-         />
-       }
-     />
-   );
- }
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(email_template_keys)}
+      />
+    );
+  }
+  if (params[0] == "sitemap") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(sitemap_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(share_earn_link_keys)}
-   />
- );
-}
+    return (
+      <AdminComponent routes={params} tableData={makeTableData(sitemap_keys)} />
+    );
+  }
 
-if
-(params[0] == "contact_form") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(contact_form_keys)}
-         />
-       }
-     />
-   );
- }
+  if (params[0] == "currency_master") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(currency_master_keys)}
+            />
+          }
+        />
+      );
+    }
 
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(contact_form_keys)}
-   />
- );
-}
-if
-(params[0] == "settings") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <TabbedComponent
-         />
-       }
-     />
-   );
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(currency_master_keys)}
+      />
+    );
+  }
 
+  if (params[0] == "country_master") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(country_master_keys)}
+            />
+          }
+        />
+      );
+    }
 
-}
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(country_master_keys)}
+      />
+    );
+  }
+  if (params[0] == "language_master") {
+    if (params[1] == "form") {
+      return (
+        <AdminComponent
+          routes={params}
+          form={
+            <CustomizableForm
+              routes={params}
+              formProperties={makeForm(language_master_keys)}
+            />
+          }
+        />
+      );
+    }
 
-if
-(params[0] == "seo_url_redirect") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(seo_url_redirect_keys)}
-         />
-       }
-     />
-   );
- }
-
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(seo_url_redirect_keys)}
-   />
- );
-}
-
-if
-(params[0] == "email_templates") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(email_template_keys)}
-         />
-       }
-     />
-   );
- }
-
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(email_template_keys)}
-   />
- );
-}
-if
-(params[0] == "sitemap") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(sitemap_keys)}
-         />
-       }
-     />
-   );
- }
-
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(sitemap_keys)}
-   />
- );
-}
-
-if
-(params[0] == "currency_master") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(currency_master_keys)}
-         />
-       }
-     />
-   );
- }
-
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(currency_master_keys)}
-   />
- );
-}
-
-
-if
-(params[0] == "country_master") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(country_master_keys)}
-         />
-       }
-     />
-   );
- }
-
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(country_master_keys)}
-   />
- );
-}
-if
-(params[0] == "language_master") {
- if (params[1] == "form") {
-   return (
-     <AdminComponent
-       routes={params}
-       form={
-         <CustomizableForm routes={params}
-           formProperties={makeForm(language_master_keys)}
-         />
-       }
-     />
-   );
- }
-
- return (
-   <AdminComponent
-     routes={params}
-     tableData={makeTableData(language_master_keys)}
-   />
- );
-}
+    return (
+      <AdminComponent
+        routes={params}
+        tableData={makeTableData(language_master_keys)}
+      />
+    );
+  }
 
   if (params[0] == "stores") {
     if (params[1] == "form") {
@@ -1630,7 +1599,7 @@ if
               },
               {
                 type: 7,
-                title: "Cahsback Percent",
+                title: "Cashback Percent",
               },
               {
                 type: 7,
@@ -1728,7 +1697,9 @@ if
       return (
         <AdminComponent
           routes={params}
-          form={<CustomizableForm formProperties={formProperties} />}
+          form={
+            <CustomizableForm routes={params} formProperties={formProperties} />
+          }
         />
       );
     }

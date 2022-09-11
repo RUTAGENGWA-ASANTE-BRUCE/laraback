@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import connectMongo from "../../../../utils/connectMongo";
-import user from "../../../../models/user_model";
-
+import connectMongo from "../../../utils/connectMongo";
+import user from "../../../models/user_model";
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   const {
     method,
