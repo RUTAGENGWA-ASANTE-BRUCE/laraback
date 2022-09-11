@@ -1,9 +1,9 @@
 import {Schema,model,models} from 'mongoose'
 const email_template_schema =new Schema({
-    "Name":String,
-    "Subject":String,
-    "Template":String,
-    "View Name":String,
+    "Name":{type:String,default:""},
+    "Subject":{type:String,default:""},
+    "Template":{type:String,default:""},
+    "View Name":{type:String,default:""},
 },
 {timestamps:true})
 

@@ -3,14 +3,14 @@ const affiliate_network_schema =new Schema({
     "Program Id": Number,
     "Name": String,
     "Csv_format": String,
-    "Post_back":String,
+    "Post_back":{type:String,default:""},
     "Confirmeds": String,
     "Pendings": String,
     "Declineds": String,
-    "Website":String,
+    "Website":{type:String,default:""},
     "Image": String,
     "Last_csv_upload": String,
-    "Enabled":String
+    "Enabled":{type:String,default:""}
 },
 {timestamps:true})
 

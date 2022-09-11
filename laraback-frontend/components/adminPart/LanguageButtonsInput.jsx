@@ -10,6 +10,7 @@ function LanguageButtonsInput({
   title,
   placeholder,
   subscripted,
+  formPartData,
   informationIconAvailable,
   buttonsAvailable,
   inputAvailable,
@@ -44,6 +45,7 @@ function LanguageButtonsInput({
       )}
       {inputAvailable && (
         <input
+        defaultValue={formPartData}
           type="text"
            name={title}
           className={`${flexRow?'p-1':'p-2'} w-full border-2 border-gray-400  ${flexRow && 'h-9 mt-1'} ${!flexRow && 'rounded-md'} ${flexRow?'':'mt-2'}`}
@@ -60,11 +62,11 @@ function LanguageButtonsInput({
       </div>
       )}
       {textAreaAvailable && (
-        <textarea rows={6} name={title}  className="w-full border-2 border-gray-400 p-2 rounded-md" />
+        <textarea rows={6} name={title} defaultValue={formPartData}  className="w-full border-2 border-gray-400 p-2 rounded-md" />
       )}
-      {toggleInputAvailable && (<ToggleComponent name={title} />)}
-      {listBoxAvailable && (<ListBoxComponent title={title}/>)}
-      {datePickerAvailable && (<DatePickerComponent title={title} setHiddenInputValue={setHiddenInputValue}value={dateValue} setValue={setDateValue} />)}
+      {toggleInputAvailable && (<ToggleComponent formPartData={formPartData} name={title} />)}
+      {listBoxAvailable && (<ListBoxComponent formPartData={formPartData} title={title}/>)}
+      {datePickerAvailable && (<DatePickerComponent formPartData={formPartData} title={title} setHiddenInputValue={setHiddenInputValue}value={dateValue} setValue={setDateValue} />)}
     </div>
   );
 }

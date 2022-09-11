@@ -1,13 +1,13 @@
 import {Schema,model,models} from 'mongoose'
 const manual_sales_import_schema =new Schema({
-    "Network Id":String,
-    "Network Campaign":String,
-    "Transaction Id":String,
-    "Sale Date":String,
-    "Base Commission":String,
-    "Currency":String,
-    "Status":String,
-    "Aff Sub1":String,
+    "Network Id":{type:String,default:""},
+    "Network Campaign":{type:String,default:""},
+    "Transaction Id":{type:String,default:""},
+    "Sale Date":{type:String,default:""},
+    "Base Commission":{type:String,default:""},
+    "Currency":{type:String,default:""},
+    "Status":{type:String,default:""},
+    "Aff Sub1":{type:String,default:""},
 },
 {timestamps:true})
 

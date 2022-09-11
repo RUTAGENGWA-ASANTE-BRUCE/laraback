@@ -1,10 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 const network_run_schema =new Schema({
-    "Network":String,
-  "Type":String,
-  "Entries":String,
-  "Start Time":String,
-  "End Time":String,
+    "Network":{type:String,default:""},
+  "Type":{type:String,default:""},
+  "Entries":{type:String,default:""},
+  "Start Time":{type:String,default:""},
+  "End Time":{type:String,default:""},
 },
 {timestamps:true})
 

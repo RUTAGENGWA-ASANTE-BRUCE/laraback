@@ -1,8 +1,8 @@
 import {Schema,model,models} from 'mongoose'
 const contact_form_schema =new Schema({
-    "Name":String,
-    "Email":String,
-    "Reason":String,
+    "Name":{type:String,default:""},
+    "Email":{type:String,default:""},
+    "Reason":{type:String,default:""},
 },
 {timestamps:true})
 

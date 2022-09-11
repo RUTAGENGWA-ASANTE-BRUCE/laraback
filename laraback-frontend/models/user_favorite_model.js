@@ -1,8 +1,8 @@
 import {Schema,model,models} from 'mongoose'
 const user_favorite_schema =new Schema({
-    "Id":String,
-    "Name":String,
-    "Users List":String,
+    "Id":{type:String,default:""},
+    "Name":{type:String,default:""},
+    "Users List":{type:String,default:""},
 },
 {timestamps:true})
 

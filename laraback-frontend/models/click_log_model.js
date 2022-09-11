@@ -1,13 +1,13 @@
 import {Schema,model,models} from 'mongoose'
 const click_log_schema =new Schema({
-    "Store":String,
-    "User":String,
-    "Cashback Enabled":String,
-    "Cashback Percent":String,
-    "Referral Percent":String,
-    "User Cashback Id":String,
-    "Ip Address":String,
-    "Http Referrer":String,
+    "Store":{type:String,default:""},
+    "User":{type:String,default:""},
+    "Cashback Enabled":{type:String,default:""},
+    "Cashback Percent":{type:String,default:""},
+    "Referral Percent":{type:String,default:""},
+    "User Cashback Id":{type:String,default:""},
+    "Ip Address":{type:String,default:""},
+    "Http Referrer":{type:String,default:""},
 },
 {timestamps:true})
 

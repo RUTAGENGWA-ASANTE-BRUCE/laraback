@@ -1,9 +1,9 @@
 import {Schema,model,models} from 'mongoose'
 const store_cashback_schema =new Schema({
-    "Store":String,
-    "User Id":String,
-    "Amount":String,
-    "Product Id":String,
+    "Store":{type:String,default:""},
+    "User Id":{type:String,default:""},
+    "Amount":{type:String,default:""},
+    "Product Id":{type:String,default:""},
 },
 {timestamps:true})
 

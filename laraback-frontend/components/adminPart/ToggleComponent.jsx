@@ -4,8 +4,8 @@ import React from 'react'
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
 
-export default function ToogleComponent({name}) {
-  const [enabled, setEnabled] = useState(false)
+export default function ToogleComponent({name,formPartData}) {
+  const [enabled, setEnabled] = useState(formPartData=="yes"?true:false)
 
   return (
     <div className="">

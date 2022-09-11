@@ -7,7 +7,7 @@ import { BiSortDown } from "react-icons/bi";
 import { FaFilter } from "react-icons/fa";
 import Table from "../../components/adminPart/Table";
 import Link from 'next/link'
-function AdminComponent({ pageDescriptions, form, tableData,routes }) {
+function AdminComponent({ pageDescriptions, form, tableData,routes,objectKeys,viewDocument }) {
   return (
     <div className="flex flex-row bg-slate-100 min-h-screen">
       <AdminNavBar />
@@ -66,14 +66,17 @@ function AdminComponent({ pageDescriptions, form, tableData,routes }) {
                 </div>
                 <div className="mt-3">
                   <Table
+                    params={routes}
                     tableHeader={tableData.tableHeader}
                     tableRows={tableData.tableRows}
+                    objectKeys={objectKeys}
                   />
                 </div>
               </div>
             </div>
           )}
           {form && form}
+            {viewDocument && viewDocument}
         </div>
       </div>
     </div>

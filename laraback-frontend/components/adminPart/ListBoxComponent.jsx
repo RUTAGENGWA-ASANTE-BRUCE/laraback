@@ -74,25 +74,22 @@ const people = [
 // }
 // }
 
-export default function ListBoxComponent({ title }) {
+export default function ListBoxComponent({ title, formPartData }) {
   const [dropDownData, setDropDownData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      if (title=="Store Id") {
-        await fetch("/api/admin/stores",{method:"GET"})
+      if (title == "Store Id") {
+        await fetch("/api/stores", { method: "GET" })
           .then((res) => res.json())
           .then((data) => setDropDownData(data));
       }
-      if (
-        title=="Network" ||
-        title=="Networks"
-      ) {
-        await fetch("/api/admin/affiliate_networks")
+      if (title == "Network" || title == "Networks") {
+        await fetch("/api/affiliate_networks")
           .then((res) => res.json())
           .then((data) => setDropDownData(data));
       }
     };
-    fetchData()
+    fetchData();
   }, []);
   return (
     <div
@@ -100,10 +97,20 @@ export default function ListBoxComponent({ title }) {
         title ? "w-full" : "w-[160px]"
       } relative`}
     >
-        <select name={title} id={title}>
-          {dropDownData &&
-            dropDownData.map((data) => <option value={data._id}>{data.Name && data.Name}</option>)}
-        </select>
-      </div>
+      <select name={title} id={title}>
+        {dropDownData &&
+          dropDownData.map((data) =>
+            formPartData == data._id ? (
+              <option value={data._id} selected>
+                {data.Name && data.Name}
+              </option>
+            ) : (
+              <option value={data._id} selected>
+                {data.Name && data.Name}
+              </option>
+            )
+          )}
+      </select>
+    </div>
   );
 }

@@ -10,7 +10,7 @@ import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 
 
-export default function DatePickerComponent({title,value,setValue,setHiddenInputValue}) {
+export default function DatePickerComponent({title,value,setValue,setHiddenInputValue,formPartData}) {
 
   const handleChange = (newValue) => {
     setHiddenInputValue({title,value:newValue["$D"]+"/"+(Number(newValue["$M"])+1)+"/"+newValue["$y"]});
@@ -24,7 +24,7 @@ export default function DatePickerComponent({title,value,setValue,setHiddenInput
         <DesktopDatePicker
         
           inputFormat="MM/DD/YYYY"
-          value={value}
+          value={formPartData==""?value:formPartData}
           onChange={handleChange}
           renderInput={(params) => <TextField {...params} />}
         />

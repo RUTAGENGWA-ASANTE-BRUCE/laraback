@@ -11,6 +11,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import Image from "next/image";
+import {useRouter} from "next/router"
 
 const links = {
   ourCompany: [
@@ -69,6 +70,7 @@ const links = {
 };
 
 function Footer() {
+
   return (
     <div className="relative">
       <svg
@@ -136,6 +138,7 @@ function Footer() {
       </div>
     </div>
   );
+
 }
 
 export default Footer;

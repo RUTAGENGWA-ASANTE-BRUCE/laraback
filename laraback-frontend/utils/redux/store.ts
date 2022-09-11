@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authSlice from './slices/authSlice'
+import selectingSlice from './slices/selectingSlice'
 export const store = configureStore({
   reducer: {
-    session:authSlice
+    session:authSlice,
+    selecting:selectingSlice
   },
 })
 

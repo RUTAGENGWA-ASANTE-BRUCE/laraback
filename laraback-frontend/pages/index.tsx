@@ -27,7 +27,7 @@ const Home:NextPage= ({userData}) => {
         </head>
         <main>
           <Header />
-          <HomePage  />
+          <HomePage userData={userData} />
           <Footer />
         </main>
     </div>

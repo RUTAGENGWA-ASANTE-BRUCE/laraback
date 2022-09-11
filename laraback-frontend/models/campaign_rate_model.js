@@ -1,13 +1,13 @@
 import {Schema,model,models} from 'mongoose'
 const campaign_rate_schema =new Schema({
     'Network':String,
-    "Network Campagn Id":String,
-    "Campaign Id":String,
-    "Name":String,
-    "Type":String,
-    "Amount":Number,
-    "Base Amount":Number,
-    "Currency":String,
+    "Network Campagn Id":{type:String,default:""},
+    "Campaign Id":{type:String,default:""},
+    "Name":{type:String,default:""},
+    "Type":{type:String,default:""},
+    "Amount":{type:Number,default:0},
+    "Base Amount":{type:Number,default:0},
+    "Currency":{type:String,default:""},
 },
 {timestamps:true})
 

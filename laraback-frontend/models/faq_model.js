@@ -1,8 +1,8 @@
 import {Schema,model,models} from 'mongoose'
 const faq_schema =new Schema({
-    "Title":String,
-    "Category":String,
-    "Sort Order":String,
+    "Title":{type:String,default:""},
+    "Category":{type:String,default:""},
+    "Sort Order":{type:String,default:""},
 },
 {timestamps:true})
 

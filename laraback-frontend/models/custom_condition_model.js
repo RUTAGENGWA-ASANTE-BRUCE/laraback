@@ -1,12 +1,12 @@
 import {Schema,model,models} from 'mongoose'
 const custom_condition_schema =new Schema({
-    "Store":String,
-    "Minimun Order Amount":Number,
-    "Cashback Amount":Number,
-    "Start Date":String,
-    "End Date":String,
-    "Enabled":String,
-    "Priority":String,
+    "Store":{type:String,default:""},
+    "Minimun Order Amount":{type:Number,default:0},
+    "Cashback Amount":{type:Number,default:0},
+    "Start Date":{type:String,default:""},
+    "End Date":{type:String,default:""},
+    "Enabled":{type:String,default:""},
+    "Priority":{type:String,default:""},
 },
 {timestamps:true})
 

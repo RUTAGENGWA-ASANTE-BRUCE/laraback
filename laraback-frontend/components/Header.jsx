@@ -8,14 +8,15 @@ import { FaSearch } from "react-icons/fa";
 import Logo from "../public/laraback-logo.png";
 import Image from "next/image";
 import NavBarDropDown from "./NavBarDropdown"
+import {useRouter} from "next/router"
 function Header() {
+
   return (
     <div className="flex flex-col lg:flex-row sticky bg-white w-full p-1  px-3 justify-between border-b">
       {/* <div className="text-[30px] flex flex-row text-orange-400 font-semibold ">
             <BsFillBagFill className=" mt-1" />
             <p className="">Laraback<span className="text-black">pro</span></p>
         </div> */}
-      <Image src={Logo} width={200} height={50} layout="fixed" />
       <div className="flex flex-row justify-between w-[100%] lg:w-[80%]">
         <div className="hidden lg:flex flex-row text-lg font-semibold mt-2.5">
           <div className=" flex-row ml-3 flex">

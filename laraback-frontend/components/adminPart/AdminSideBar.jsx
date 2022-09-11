@@ -12,8 +12,9 @@ import {FaUsers} from 'react-icons/fa'
 import {BsCash} from 'react-icons/bs'
 import {TbPlug} from 'react-icons/tb'
 function AdminNavBar() {
-  return (
-    <div className="max-h-screen bg-white border-r w-[18%] shadow-xl">
+
+    return (
+      <div className="max-h-screen bg-white border-r w-[18%] shadow-xl">
       <Image src={Logo} width={200} height={50} layout="fixed" />
       <div className='flex flex-row space-x-2 pl-4 py-2 mt-10 border-b border-t'>
         <VscSymbolColor className="text-lg mt-1" />

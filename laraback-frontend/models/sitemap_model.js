@@ -1,10 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 const sitemap_schema =new Schema({
-    "Module":String,
-    "Slug":String,
-    "Frequency":String,
-    "Priority":String,
-    "Enabled":String,
+    "Module":{type:String,default:""},
+    "Slug":{type:String,default:""},
+    "Frequency":{type:String,default:""},
+    "Priority":{type:String,default:""},
+    "Enabled":{type:String,default:""},
 },
 {timestamps:true})
 
