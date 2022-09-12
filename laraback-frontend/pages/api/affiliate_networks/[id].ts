@@ -22,9 +22,14 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     case "DELETE":
       try {
         const deleteDocument = await affiliate_network.findByIdAndDelete(id);
-        if (!deleteDocument)
+        if (!deleteDocument){
+
           return res.status(404).json({ msg: "The document does not exist" });
-        return res.status(204).json();
+        }
+        else{
+
+          return res.status(204).json();
+        }
       } catch (error) {
         return res.status(400).json({ msg: error.message });
       }
