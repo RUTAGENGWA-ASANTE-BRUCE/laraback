@@ -24,7 +24,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         const deleteDocument = await currency_master.findByIdAndDelete(id);
         if (!deleteDocument)
           return res.status(404).json({ msg: "The document does not exist" });
-        return res.status(204).json();
+        return res.status(204).json({msg:"Document deleted successfully"});
       } catch (error) {
         return res.status(400).json({ msg:error });
       }

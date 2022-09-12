@@ -28,7 +28,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         }
         else{
 
-          return res.status(204).json();
+          return res.status(204).json({msg:"Document deleted successfully"});
         }
       } catch (error) {
         return res.status(400).json({ msg:error });
