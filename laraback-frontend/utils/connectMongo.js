@@ -5,9 +5,9 @@ const connectionParams={
     useUnifiedTopology:true,
     autoIndex:true,
 }
-const database=""
+const database="laraback2"
 const password="laraback1234"
-const uri=`mongodb+srv://larabac1234:laraback1234@cluster0.y3n1yuj.mongodb.net/laraback2?retryWrites=true&w=majority`
+const uri=`mongodb+srv://larabac1234:${password}@cluster0.y3n1yuj.mongodb.net/${database}?retryWrites=true&w=majority`
 
 const connectMongo=async ()=>mongoose.connect(uri,connectionParams).then(()=>console.log('connected to cloud atlas')).catch(err=>console.log(err))
 

@@ -10,6 +10,7 @@ import {
   selectSelectedFormData,
 } from "../../utils/redux/slices/selectingSlice";
 import ViewDocument from "../../components/adminPart/ViewDocument";
+import AdminDashboard from "../../components/adminPart/AdminDashboard";
 const affiliate_network_keys = [
   "Program Id",
   "Name",
@@ -411,107 +412,6 @@ const language_master_keys = [
   "createdAt",
   "updatedAt",
 ];
-const tableRows = [
-  {
-    id: 1,
-    Network: "Snow",
-    User: "Jon",
-    Cashback: 8111,
-    Currency: "USD",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: 35,
-  },
-  {
-    id: 2,
-    Network: "Lannister",
-    User: "Cersei",
-    Cashback: 8111,
-    Currency: "USD",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: 42,
-  },
-  {
-    id: 3,
-    Network: "Lannister",
-    User: "Jaime",
-    Cashback: 3242,
-    Currency: "USD",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: 45,
-  },
-  {
-    id: 4,
-    Network: "Stark",
-    User: "Arya",
-    Cashback: 8111,
-    Currency: "BNB",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: 16,
-  },
-  {
-    id: 5,
-    Network: "Targaryen",
-    User: "Daenerys",
-    Cashback: 8111,
-    Currency: "USD",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: null,
-  },
-  {
-    id: 6,
-    Network: "Melisandre",
-    User: null,
-    Cashback: 8111,
-    Currency: "USD",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: 150,
-  },
-  {
-    id: 7,
-    Network: "Clifford",
-    User: "Ferrara",
-    Cashback: 8111,
-    Currency: "USD",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: 44,
-  },
-  {
-    id: 8,
-    Network: "Frances",
-    User: "Rossini",
-    Cashback: 8111,
-    Currency: "USD",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: 36,
-  },
-  {
-    id: 9,
-    Network: "Roxie",
-    User: "Harvey",
-    Cashback: 8111,
-    Currency: "USD",
-    Status: "confirmed",
-    "Lock Cashback Status": "no",
-    "Lock Cashback Amount": "no",
-    Store: 65,
-  },
-];
 
 const makeTableData = (model, tableDataRows) => {
   const tableData = {
@@ -664,142 +564,32 @@ const makeForm = (model, data) => {
   return formProperties;
 };
 
-const tableData = {
-  tableHeader: {
-    columns: [
-      "User",
-      "Network",
-      "Store",
-      "Cashback",
-      "Currency",
-      "Status",
-      "Lock Cashback Status",
-      "Lock Cashback Amount",
-    ],
-    dataOnly: ["User", "Network", "Store"],
-  },
-  tableRows: [
-    {
-      id: 1,
-      Network: "Snow",
-      User: "Jon",
-      Cashback: 8111,
-      Currency: "USD",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: 35,
-    },
-    {
-      id: 2,
-      Network: "Lannister",
-      User: "Cersei",
-      Cashback: 8111,
-      Currency: "USD",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: 42,
-    },
-    {
-      id: 3,
-      Network: "Lannister",
-      User: "Jaime",
-      Cashback: 3242,
-      Currency: "USD",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: 45,
-    },
-    {
-      id: 4,
-      Network: "Stark",
-      User: "Arya",
-      Cashback: 8111,
-      Currency: "BNB",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: 16,
-    },
-    {
-      id: 5,
-      Network: "Targaryen",
-      User: "Daenerys",
-      Cashback: 8111,
-      Currency: "USD",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: null,
-    },
-    {
-      id: 6,
-      Network: "Melisandre",
-      User: null,
-      Cashback: 8111,
-      Currency: "USD",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: 150,
-    },
-    {
-      id: 7,
-      Network: "Clifford",
-      User: "Ferrara",
-      Cashback: 8111,
-      Currency: "USD",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: 44,
-    },
-    {
-      id: 8,
-      Network: "Frances",
-      User: "Rossini",
-      Cashback: 8111,
-      Currency: "USD",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: 36,
-    },
-    {
-      id: 9,
-      Network: "Roxie",
-      User: "Harvey",
-      Cashback: 8111,
-      Currency: "USD",
-      Status: "confirmed",
-      "Lock Cashback Status": "no",
-      "Lock Cashback Amount": "no",
-      Store: 65,
-    },
-  ],
-};
 
 function Admin() {
   const selected_form_data = useSelector(selectSelectedFormData);
   const selected_object_keys = useSelector(selectSelectedObjectKeys);
   const router = useRouter();
+  const [dashboardData,setDashboardData] = useState()
   const [document, setDocument] = useState();
   const { params = [] } = router.query;
   const [dbData, setDbData] = useState();
   console.log("/api/", params[0]);
   useEffect(() => {
     const fetchData = async () => {
-      const route = params[0];
-      if (route) {
+      if(params.length==0){
+        await fetch('api/admin_dashboard',{method: "GET"}).then(res=>res.json()).then(data=>setDashboardData(data))
+      }
+      else{
+
+        const route = params[0];
+        if (route) {
         if (route.length === 24) {
           if (params[params.length - 2] == "edit") {
             await fetch(`api/${params[params.length - 2]}/${route}`)
               .then((res) => res.json())
               .then((data) => setDocument(data));
-          } else {
-            await fetch(`api/${params[params.length - 1]}/${route}`)
+            } else {
+              await fetch(`api/${params[params.length - 1]}/${route}`)
               .then((res) => res.json())
               .then((data) => setDocument(data));
           }
@@ -810,15 +600,25 @@ function Admin() {
               setDbData(data);
               console.log("=======================", data);
             });
+          }
         }
       }
     };
     fetchData();
   }, [params]);
-  if (dbData) {
-    if (params[params.length - 1].length === 24) {
-      if (params[params.length - 2] == "edit") {
-        return (
+  if(params.length===0){
+    return (
+      <AdminComponent
+        routes={params}
+        dashboard={<AdminDashboard dashboardData={dashboardData} />}
+      />)
+  }
+  else{
+
+    if (dbData) {
+      if (params[params.length - 1].length === 24) {
+        if (params[params.length - 2] == "edit") {
+          return (
           <AdminComponent
             routes={params}
             form={
@@ -860,7 +660,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -906,7 +706,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -929,7 +729,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -952,7 +752,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -975,7 +775,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -998,7 +798,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1021,7 +821,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1044,7 +844,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1057,7 +857,7 @@ function Admin() {
       if (params[1] == "form") {
         return <AdminComponent routes={params} form={<MenuBuilder />} />;
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1079,7 +879,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1102,7 +902,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1125,7 +925,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1148,7 +948,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1171,7 +971,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1194,7 +994,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1217,7 +1017,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1240,7 +1040,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1263,7 +1063,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1286,7 +1086,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1332,7 +1132,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1355,7 +1155,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1378,7 +1178,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1401,7 +1201,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1424,7 +1224,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1447,7 +1247,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1470,7 +1270,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1494,7 +1294,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1517,7 +1317,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1526,7 +1326,7 @@ function Admin() {
         />
       );
     }
-
+    
     if (params[0] == "missing_cb_claims") {
       if (params[1] == "form") {
         return (
@@ -1541,7 +1341,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1564,7 +1364,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1587,7 +1387,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1610,7 +1410,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1618,7 +1418,7 @@ function Admin() {
         />
       );
     }
-
+    
     if (params[0] == "contact_form") {
       if (params[1] == "form") {
         return (
@@ -1633,7 +1433,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1645,7 +1445,7 @@ function Admin() {
     if (params[0] == "settings") {
       return <AdminComponent routes={params} form={<TabbedComponent />} />;
     }
-
+    
     if (params[0] == "seo_url_redirect") {
       if (params[1] == "form") {
         return (
@@ -1660,7 +1460,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1684,7 +1484,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1707,7 +1507,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1731,7 +1531,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1740,7 +1540,7 @@ function Admin() {
         />
       );
     }
-
+    
     if (params[0] == "country_master") {
       if (params[1] == "form") {
         return (
@@ -1755,7 +1555,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1778,7 +1578,7 @@ function Admin() {
           />
         );
       }
-
+      
       return (
         <AdminComponent
           routes={params}
@@ -1787,7 +1587,7 @@ function Admin() {
         />
       );
     }
-
+    
     if (params[0] == "stores") {
       if (params[1] == "form") {
         const formProperties = {
@@ -1953,6 +1753,7 @@ function Admin() {
         />
       );
     }
+  }
   }
 }
 

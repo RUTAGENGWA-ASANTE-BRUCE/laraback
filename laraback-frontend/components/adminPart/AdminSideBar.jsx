@@ -16,10 +16,13 @@ function AdminNavBar() {
     return (
       <div className="max-h-screen bg-white border-r w-[18%] shadow-xl">
       <Image src={Logo} width={200} height={50} layout="fixed" />
-      <div className='flex flex-row space-x-2 pl-4 py-2 mt-10 border-b border-t'>
+      <Link href={'/admin'}>
+
+      <div className='flex flex-row cursor-pointer  space-x-2 pl-4 py-2 mt-10 border-b border-t'>
         <VscSymbolColor className="text-lg mt-1" />
         <p className=" font-semibold">DASHBOARD</p>
       </div>
+      </Link>
 
     <DropDownNavigator icon={<AiOutlineShoppingCart className="text-lg mt-1 mr-2 opacity-50" />} title='STORES & OFFERS' links={['Stores','Store Cashback','Store Categories','Coupon & Offers','Offer Categories','Daily Deals','Deals Categories']}/>
     <DropDownNavigator icon={<MdAirplanemodeActive className="text-lg mt-1 mr-2 opacity-50 rotate-45" />} title={'INSTABACK PROMO'} links={['Instaback Offers','Instaback Click Log']} />
