@@ -17,7 +17,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
           return res.status(404).json({ msg: "The document does not exist" });
         return res.status(200).json(document);
       } catch (error) {
-        return res.status(400).json({ msg: error.message });
+        return res.status(400).json({ msg:error });
       }
     case "DELETE":
       try {
@@ -31,7 +31,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
           return res.status(204).json();
         }
       } catch (error) {
-        return res.status(400).json({ msg: error.message });
+        return res.status(400).json({ msg:error });
       }
     case "PUT":
       try {
