@@ -17,7 +17,7 @@ export default async function (
           return res.status(200).json(documents);
       }  
       catch (error){
-        return res.status(400).json({msg:error.message})
+        return res.status(400).json({msg:error})
       }
     case "POST":
         try {
@@ -34,7 +34,7 @@ export default async function (
             );
           return res.status(200).json(savedDocument)          
         } catch (error) {
-        return res.status(400).json({msg:error.message}) 
+        return res.status(400).json({msg:error}) 
         }
     default:
       break;

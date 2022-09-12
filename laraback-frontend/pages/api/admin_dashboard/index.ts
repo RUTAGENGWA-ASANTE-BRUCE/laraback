@@ -31,7 +31,7 @@ export default async function (
         return res.status(200).json(dataObject);
       }  
       catch (error){
-        return res.status(400).json({msg:error.message})
+        return res.status(400).json({msg:error})
       }
     default:
       break;
