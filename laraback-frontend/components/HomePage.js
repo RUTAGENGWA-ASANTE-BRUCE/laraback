@@ -64,7 +64,7 @@ const headings = {
   ],
 };
 //
-function HomePage({ message }) {
+function HomePage() {
   const dispatch = useDispatch();
   const [selectedStoreHeading, setSelectedStoreHeading] = useState(
     headings.store[0]
@@ -100,7 +100,7 @@ function HomePage({ message }) {
         <div className="w-[100%] md:w-[65%] pt-20">
           <div>
             <h1 className=" text-[35px] md:text-[45px] font-semibold  text-orange-400 mt-3">
-              Get up to 40% Cashback at over 2,500 stores {message}
+              Get up to 40% Cashback at over 2,500 stores
             </h1>
             <p className="mt-2 font-light">
               1620 Free Coupon Codes & Discount Deals added this week
@@ -409,19 +409,6 @@ function HomePage({ message }) {
   );
 }
 
-export const getServerSideProps = (context) => {
-  try {
-    return {
-      props: { message: "supppppppppppp" },
-      // notFound: object ? false : true,
-      // redirect: {
-      //     destination: '/',
-      //     permanent: true
-      // }
-    };
-  } catch (error) {
-    return { props: { errorCode: 403, message: "broken" } };
-  }
-};
+
 
 export default HomePage;

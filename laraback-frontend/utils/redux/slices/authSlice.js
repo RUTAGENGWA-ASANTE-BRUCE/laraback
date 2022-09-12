@@ -1,11 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface sessionState {
-    userData:{},
-}
 
-const initialState: sessionState = {
+
+const initialState= {
   userData: {},
 }
 
