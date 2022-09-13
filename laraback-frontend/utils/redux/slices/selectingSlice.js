@@ -18,7 +18,7 @@ export const selectingSlice = createSlice({
         state.selectedFormData =action.payload
     },
   },
-})
+})  
 
 // Action creators are generated for each case reducer function
 export const { setSelectedObjectKeys,setSelectedFormData } = selectingSlice.actions

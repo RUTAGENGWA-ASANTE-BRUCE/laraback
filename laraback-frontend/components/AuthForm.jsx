@@ -75,10 +75,10 @@ function AuthForm() {
   return (
     <div className=" w-[100%] mx-auto md:w-[33%] z-50 h-[87vh] mt-5 py-5 bg-white rounded-br-[70px] rounded-tl-[70px]">
       <div className="pb-3 border-b">
-        <div className="flex flex-row text-white h-10 w-fit px-3 m-auto items-center font-light bg-orange-500 rounded-full">
+        <div className="flex flex-row text-white h-10 w-fit px-3 m-auto items-center font-light bg-skin-button-muted rounded-full">
           <BsGift className="text-base" />
           <p className="ml-2">
-            Sign up & get <span className="text-purple-900">Rp50.00</span> Today
+            Sign up & get <span className="text-black">Rp50.00</span> Today
           </p>
         </div>
         <div className="flex flex-row mx-auto w-fit space-x-3 mt-5">
@@ -97,39 +97,39 @@ function AuthForm() {
         className=" flex flex-col pt-7 space-y-5 w-96 mx-auto"
         onSubmit={(e) => handleSubmit(e)}
       >
-        <div className="bg-orange-50 p-2.5 flex rounded-md  shadow-md shadow-purple-200 flex-row">
+        <div className="bg-skin-button-accent-hover p-2.5 flex rounded-md  shadow-md  flex-row">
           <input
-            className="mr-2 w-[90%] bg-transparent outline-none border-none"
+            className="mr-2 w-[90%] bg-transparent placeholderbg-gray-900 outline-none border-none"
             placeholder="Email"
             type="text"
             name="username"
             id="username"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <AiOutlineMail className="text-2xl text-gray-300" />
+          <AiOutlineMail className="text-2xl text-black" />
         </div>
-        <div className="bg-orange-50 p-2.5  flex rounded-md  shadow-md shadow-purple-200 flex-row">
+        <div className="bg-skin-button-accent-hover p-2.5  flex rounded-md  shadow-md  flex-row">
           <input
-            className="mr-2  w-[90%] bg-transparent outline-none border-none"
+            className="mr-2  w-[90%] bg-transparent placeholderbg-gray-900 outline-none border-none"
             placeholder="Enter Password"
             type="text"
             name="password"
             id="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <RiLockPasswordLine className="text-2xl text-gray-300" />
+          <RiLockPasswordLine className="text-2xl text-black" />
         </div>
         <p className="font-light ">
           <input type="checkbox" className="w-5 h-5" /> I Agree to{" "}
-          <span className="cursor-pointer text-purple-600 font-normal">
+          <span className="cursor-pointer text-skin-inverted font-normal">
             Privacy Policy
           </span>{" "}
           and{" "}
-          <span className="cursor-pointer text-purple-600 font-normal">
+          <span className="cursor-pointer text-skin-inverted font-normal">
             Terms of Use
           </span>
         </p>
-        <p className="text-purple-600  text-right cursor-pointer">
+        <p className="text-skin-inverted  text-right cursor-pointer">
           Did someone refer you?
         </p>
         <ReCAPTCHA
@@ -139,7 +139,7 @@ function AuthForm() {
         />
         {formAction == "register" && (
           <div className="mt-2">
-            <button className="rounded-md text-white font-light w-full bg-purple-800 p-1 px-2 h-10 mt-1">
+            <button className="rounded-md text-white font-light w-full bg-skin-fill hover:opacity-70 p-1 px-2 h-10 mt-1">
               JOIN NOW
             </button>
             <p className="text-center">
@@ -147,7 +147,7 @@ function AuthForm() {
               Existing user{" "}
               <button
                 onClick={() => setFormAction("login")}
-                className=" text-orange-400 font-normal"
+                className=" text-skin-inverted hover:text-skin-muted font-normal"
               >
                 Sign In
               </button>
@@ -157,7 +157,7 @@ function AuthForm() {
 
         {formAction == "login" && (
           <div  className="mt-2">
-            <button className="rounded-md text-white font-light w-full bg-purple-800 p-1 px-2 h-10 mt-1">
+            <button className="rounded-md text-white font-light w-full bg-skin-fill p-1 px-2 h-10 mt-1">
               LOGIN
             </button>
             <p className="text-center">
@@ -165,7 +165,7 @@ function AuthForm() {
               New user{" "}
               <button
                 onClick={() => setFormAction("register")}
-                className=" text-orange-400 font-normal"
+                className=" text-skin-inverted  hover:text-skin-muted   font-normal"
               >
                 Register
               </button>

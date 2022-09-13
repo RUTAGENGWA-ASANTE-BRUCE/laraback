@@ -79,10 +79,10 @@ function HomePage() {
   const [stores, setStores] = useState();
   useEffect(() => {
     const getData = async () => {
-      await fetch("/api/admin/stores", { method: "GET" })
+      await fetch("/api/stores", { method: "GET" })
         .then((res) => res.json())
         .then((data) => setStores(data));
-      await fetch("/api/admin/coupon_&_offers", { method: "GET" })
+      await fetch("/api/coupon_&_offers", { method: "GET" })
         .then((res) => res.json())
         .then((data) => {
           setCoupons(data);
@@ -95,11 +95,11 @@ function HomePage() {
   // const message=useSelector(selectUserData);
 
   return (
-    <div className=" bg-orange-50  min-h-screen">
+    <div className="bg-skin-fill bg-opacity-90">
       <div className="flex flex-row px-4 flex-wrap relative">
         <div className="w-[100%] md:w-[65%] pt-20">
           <div>
-            <h1 className=" text-[35px] md:text-[45px] font-semibold  text-orange-400 mt-3">
+            <h1 className=" text-[35px] md:text-[45px] font-semibold  text-skin-base mt-3">
               Get up to 40% Cashback at over 2,500 stores
             </h1>
             <p className="mt-2 font-light">
@@ -108,7 +108,7 @@ function HomePage() {
           </div>
 
           <p className="text-lg text-center font-light mt-10 ">How it works?</p>
-          <p className="font-light text-gray-500 mt-2 text-center">
+          <p className="font-light text-skin-muted mt-2 text-center">
             Earning cashback is as easy as 1-2-3-4...
           </p>
           <div className="mt-8 flex flex-row gap-y-10 flex-wrap">
@@ -126,18 +126,8 @@ function HomePage() {
         {/* {props.userData == "" &&  */}
         <AuthForm />
         {/* } */}
+        
 
-        <svg
-          className="absolute -bottom-1 z-20"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="rgb(233 213 255)"
-            fill-opacity="1"
-            d="M0,224L48,234.7C96,245,192,267,288,282.7C384,299,480,309,576,288C672,267,768,213,864,197.3C960,181,1056,203,1152,176C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
       </div>
       <div className="p-4">
         <div className="flex flex-wrap space-y-2 flex-row mt-10">
@@ -145,7 +135,7 @@ function HomePage() {
             <Image src={BlackFridayImage} layout="fill" />
           </div>
           <div className="flex flex-col w-[100%] md:w-[25%] mx-auto md:pb-0 pb-10 border border-purple-900 rounded-md bg-white">
-            <p className="py-2 text-center text-yellow-500  border-b">
+            <p className="py-2 text-center text-skin-inverted  border-b">
               Offer Of The Day
             </p>
             {coupons && offers ? (
@@ -163,8 +153,8 @@ function HomePage() {
                 <button
                   className={`pb-1 mr-5 ${
                     selectedStoreHeading?.id === heading.id
-                      ? "border-b-4  border-orange-400 text-orange-400"
-                      : "text-gray-400"
+                      ? "border-b-4  border-white text-white"
+                      : "text-black"
                   } font-semibold text-xs md:text-base`}
                   onClick={() => {
                     setSelectedStoreHeading(heading);
@@ -175,15 +165,15 @@ function HomePage() {
               ))}
             </div>
           </div>
-          <p className=" text-gray-500  mt-5">
+          <p className=" text-skin-muted  mt-5">
             Browse the cashback offers from top store and enjoy the discount!
           </p>
           <div className="flex flex-row flex-wrap pt-5 gap-2.5">
             {stores &&
-              stores.map((store) => <Store store={store} key={store._id} />)}
+              stores.map((store) => < Store store={store} key={store._id} />)}
           </div>
         </div>
-        <button className="rounded-md mt-8  font-semibold transition-all  border-2  text-black duration-700 transform  hover:text-white hover:bg-purple-800  h-12 w-full ">
+        <button className="rounded-md mt-8  font-semibold transition-all  border-2  text-skin-muted duration-700 transform  hover:text-skin-inverted hover:bg-skin-button-accent h-12 w-full ">
           View More Financial programs Stores{" "}
           <FaLongArrowAltRight className=" inline-flex" />
         </button>
@@ -196,8 +186,8 @@ function HomePage() {
                 <button
                   className={`pb-1 mr-5 ${
                     selectedOfferHeading?.id === heading.id
-                      ? "border-b-4  border-orange-400 text-orange-400"
-                      : "text-gray-400"
+                      ? "border-b-4  border-white text-white"
+                      : "text-black"
                   } font-semibold text-xs md:text-base`}
                   onClick={() => {
                     setSelectedOfferHeading(heading);
@@ -220,7 +210,7 @@ function HomePage() {
               );
             })}
         </div>
-        <button className="rounded-md mt-8  font-semibold transition-all  border-2  text-black duration-700 transform  hover:text-white hover:bg-purple-800  h-12 w-full ">
+        <button className="rounded-md mt-8  font-semibold transition-all  border-2  text-skin-muted duration-700 transform  hover:text-skin-inverted hover:bg-skin-button-accent  h-12 w-full ">
           View More Health & Beauty Coupons{" "}
           <FaLongArrowAltRight className=" inline-flex" />
         </button>
@@ -232,8 +222,8 @@ function HomePage() {
                 <button
                   className={`pb-1 mr-5 ${
                     selectedDealHeading?.id === heading.id
-                      ? "border-b-4  border-orange-400 text-orange-400"
-                      : "text-gray-400"
+                      ? "border-b-4  border-white text-white"
+                      : "text-black"
                   } font-semibold text-xs md:text-base`}
                   onClick={() => {
                     setSelectedDealHeading(heading);
@@ -244,7 +234,7 @@ function HomePage() {
               ))}
             </div>
           </div>
-          <p className=" text-gray-500  mt-5">
+          <p className=" text-skin-muted  mt-5">
             Grab the best deals of the day from popular stores along with the
             cashback.
           </p>
@@ -254,7 +244,7 @@ function HomePage() {
             ))}
           </div>
         </div>
-        <button className="rounded-md mt-8  font-semibold transition-all  border-2  text-black duration-700 transform  hover:text-white hover:bg-purple-800  h-12 w-full ">
+        <button className="rounded-md mt-8  font-semibold transition-all  border-2  text-skin-muted duration-700 transform  hover:text-skin-inverted hover:bg-skin-button-accent  h-12 w-full ">
           View More I'm sure. Deals
           <FaLongArrowAltRight className=" inline-flex" />
         </button>
@@ -269,13 +259,13 @@ function HomePage() {
             <Image src={advertCard3} layout="fill" objectFit="contain" />{" "}
           </div>
         </div>
-        <div className=" mt-10 bg-purple-50 flex flex-row justify-between border-2 border-purple-200 p-5 rounded-md">
+        <div className=" mt-10 bg-skin-button-accent-hover  flex flex-row justify-between  p-5 rounded-md">
           <div className="flex flex-row">
-            <BsGift className="mt-1 text-[60px] text-purple-800" />
+            <BsGift className="mt-1 text-[60px] text-skin-inverted" />
             <div className="ml-2">
-              <h1 className="text-lg md:text-3xl text-purple-800 ">
+              <h1 className="text-lg md:text-3xl text-skin-inverted ">
                 Join larackPRO Now and{" "}
-                <span className="text-orange-400">Get a Rp40 Bonus</span> Today!
+                <span className="text-black">Get a Rp40 Bonus</span> Today!
               </h1>
               <p className="mt-2 text-xs md:text-base">
                 The best deals, sales, coupons & more 10,000 offers you can find
@@ -284,31 +274,31 @@ function HomePage() {
             </div>
           </div>
           <div>
-            <button className="rounded-tl-md rounded-md text-white font-semibold bg-purple-800 p-1 px-2 h-10 w-40 items-center mt-1">
+            <button className="rounded-tl-md rounded-md text-white font-semibold bg-skin-fill hover:bg-opacity-70 p-1 px-2 h-10 w-40 items-center mt-1">
               Join now
             </button>
             <p className="text-center mt-2">
               {" "}
               Existing user{" "}
-              <span className="cursor-pointer text-orange-400 font-normal">
+              <span className="cursor-pointer text-skin-inverted font-normal">
                 Sign In
               </span>
             </p>
           </div>
         </div>
-        <div className="border-t-4  border-purple-200 mt-28 relative ">
-          <div className="bg-orange-50 relative mx-auto  w-fit space-y-5 -top-12 p-5">
-            <h1 className="text-2xl text-center font-medium text-gray-600">
+        <div className=" mt-28 relative ">
+          <div className=" relative mx-auto  w-fit space-y-5 -top-12 p-5">
+            <h1 className="text-2xl text-center font-medium text-black">
               How Popular We Are...
             </h1>
-            <p className="text-gray-500 text-center">
+            <p className="text-skin-muted text-center">
               Number tells louder the words...
             </p>
           </div>
           <div className="flex flex-row flex-wrap justify-between md:mx-10">
             {ourCV.map((info) => (
               <div className="space-y-2">
-                <p className=" text-3xl pt-3 rounded-md text-white font-semibold bg-purple-800 p-1 px-2 h-16 w-56 text-center mt-1">
+                <p className=" text-3xl pt-3 rounded-md text-skin-inverted font-semibold bg-skin-button-accent-hover p-1 px-2 h-16 w-56 text-center mt-1">
                   {info.number}
                 </p>
                 <p className="text-xl  font-semibold text-center">
@@ -318,12 +308,12 @@ function HomePage() {
             ))}
           </div>
         </div>
-        <div className="border-t-4  border-purple-200 mt-28 relative ">
-          <div className="bg-orange-50 relative mx-auto  w-fit space-y-5 -top-12 p-5">
-            <h1 className="text-2xl text-center font-semibold text-gray-600">
+        <div className=" mt-28 relative ">
+          <div className="relative mx-auto  w-fit space-y-5 -top-12 p-5">
+            <h1 className="text-2xl text-center font-semibold text-black">
               Cashback can be withdrawn using Paypal or Bank Transfer
             </h1>
-            <p className="text-gray-500 text-center">
+            <p className="text-skin-muted text-center">
               We offer the cashback payment with multiple payment mode.
             </p>
           </div>
@@ -335,7 +325,7 @@ function HomePage() {
               "https://logos-world.net/wp-content/uploads/2020/07/PayPal-Logo.jpg",
               "https://www.apnavacancy.com/wp-content/uploads/2021/11/Manager-Jobs-For-Freshers.png",
             ].map((bank) => (
-              <div className="p-1 w-48 h-32 bg-white border-gray-500 border rounded-md">
+              <div className="p-1 w-48 h-32 bg-white border rounded-md">
                 <img
                   src={bank}
                   alt=""
@@ -347,10 +337,10 @@ function HomePage() {
         </div>
         <div className="mt-10 space-y-10">
           <div>
-            <h1 className="text-base md:text-2xl font-semibold text-gray-600">
+            <h1 className="text-base md:text-2xl font-semibold text-black">
               Cashback can be withdrawn using Paypal or Bank Transfer
             </h1>
-            <p className="mt-4 text-sm md:text-[18px] font-light">
+            <p className="mt-4 text-sm  md:text-[18px] text-white font-light">
               LarabackPro, SImply known among the top Cashback sites in th
               world, serves its users by catering them best details, discounts
               and coupons which are tested manually every day for the ease of
@@ -368,10 +358,10 @@ function HomePage() {
           </div>
 
           <div>
-            <h1 className="text-base md:text-2xl font-semibold text-gray-600">
+            <h1 className="text-base md:text-2xl font-semibold text-black">
               Why LarabackPro
             </h1>
-            <p className="mt-4 text-sm md:text-[18px] font-light">
+            <p className="mt-4 text-sm md:text-[18px] text-white font-light">
               We help our users save upto 100% with our Cashback offers on their
               online shopping. Our mission is to be a single platform, where any
               user can get best experience at browsing their favorite items,
@@ -380,10 +370,10 @@ function HomePage() {
             </p>
           </div>
           <div>
-            <h1 className="text-base md:text-2xl font-semibold text-gray-600">
+            <h1 className="text-base md:text-2xl font-semibold text-black">
               Highest Cahsback
             </h1>
-            <p className="mt-4 text-sm md:text-[18px] font-light">
+            <p className="mt-4 text-sm md:text-[18px] text-white font-light">
               We help our users save upto 100% with our Cashback offers on their
               online shopping. Our mission is to be a single platform, where any
               user can get best experience at browsing their favorite items,
@@ -392,10 +382,10 @@ function HomePage() {
             </p>
           </div>
           <div>
-            <h1 className="text-base md:text-2xl font-semibold text-gray-600">
+            <h1 className="text-base md:text-2xl font-semibold text-black">
               100% Trustworthy
             </h1>
-            <p className="mt-4 text-sm md:text-[18px] font-light">
+            <p className="mt-4 text-sm md:text-[18px] text-white font-light">
               We help our users save upto 100% with our Cashback offers on their
               online shopping. Our mission is to be a single platform, where any
               user can get best experience at browsing their favorite items,

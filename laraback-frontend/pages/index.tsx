@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 
 import HomePage from "../components/HomePage"
-import Header from "../components/Header"
+import Header from "../components/Header" 
 import Footer from "../components/Footer"
 
 const Home:NextPage= () => {
   return (
-    <div className="">
+    <div className="theme-swiss">
         <head>
           <title>Laraback</title>
           <link

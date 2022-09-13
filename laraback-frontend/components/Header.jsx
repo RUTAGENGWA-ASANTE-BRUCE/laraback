@@ -18,21 +18,21 @@ function Header() {
             <p className="">Laraback<span className="text-black">pro</span></p>
         </div> */}
       <div className="flex flex-row justify-between w-[100%] lg:w-[80%]">
-        <div className="hidden lg:flex flex-row text-lg font-semibold mt-2.5">
-          <div className=" flex-row ml-3 flex">
+        <div className="hidden lg:flex flex-row  font-semibold">
+          <div className="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-3 py-3 border border-transparent text-sm font-medium rounded-md shadow-sm sm:px-8">
             <p>Offers</p>
             <FiChevronDown className=" text-sm mt-2 ml-0.5" />
           </div>
-          <div className="flex flex-row ml-3">
+          <div className="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-3 py-3 border border-transparent text-sm font-medium rounded-md shadow-sm sm:px-8">
             <p>Explore</p>
             <FiChevronDown className=" text-sm mt-2 ml-0.5" />
           </div>
-          <div className="flex flex-row ml-3">
-            <p>Contact Us</p>
+          <div className="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-3 py-3 border border-transparent text-sm font-medium rounded-md shadow-sm sm:px-8">
+            <p>Contact us</p>
             <FiChevronDown className=" text-sm mt-2 ml-0.5" />
           </div>
         </div>
-        <form className="flex flex-row bg-orange-50 rounded-md pl-1 h-10 mt-1">
+        <form className="flex flex-row bg-skin-button-accent-hover rounded-md pl-1 h-10 mt-1">
           <input
             type="text"
             placeholder="Search Cashback, Stores & Categories"
@@ -40,22 +40,22 @@ function Header() {
           />
           <button
             type="submit"
-            className="  rounded-md text-white bg-purple-800 w-10 h-10  items-center"
+            className="  rounded-md text-white hover:bg-opacity-70   bg-skin-button-muted w-10 h-10  items-center"
           >
             <FaSearch className="text-xl m-auto" />
           </button>
         </form>
-        <div className="hidden lg:flex flex-row ml-3 mt-2.5 font-semibold">
+        <div className="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-3 py-3 border border-transparent text-sm font-medium rounded-md shadow-sm sm:px-8">
           <p>English</p>
           <FiChevronDown className=" text-sm mt-1.5 ml-0.5" />
         </div>
-        <div className="flex flex-row md:text-base text-sm  ml-3 mt-2.5 font-semibold">
+        <div className="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-3 py-3 border border-transparent text-sm font-medium rounded-md shadow-sm sm:px-8">
           <FiUser className=" text-base mt-1 mr-0.5" />
           <p>Sign in</p>
         </div>
         <Link href='/admin'>
 
-        <button className="rounded-md text-white font-semibold md:text-base text-sm flex flex-row bg-purple-800 p-1 px-2 h-10  items-center mt-1">
+        <button className="text-skin-base bg-skin-button-muted flex items-center justify-center px-3 py-3 border border-transparent text-sm font-medium rounded-md shadow-sm bg-opacity hover:bg-opacity-70 sm:px-8">
           <IoMdAdd className="md:text-2xl text-lg" />
           Join Us
         </button>

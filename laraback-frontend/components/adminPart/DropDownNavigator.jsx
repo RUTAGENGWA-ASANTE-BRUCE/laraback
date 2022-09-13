@@ -17,17 +17,17 @@ function DropDownNavigator({icon,title,links}) {
         leaveTo="transform scale-95 opacity-0"
       >
 
-          <Menu.Items className="flex flex-col bg-gray-200 mt-2 pl-6 space-y-3 p-2">
+          <Menu.Items className="flex flex-col m-2 bg-skin-fill bg-opacity-90 rounded-md mt-2 pl-6 space-y-3 p-2">
           {links.map(link=>(
               <li>
 
             <Menu.Item >
               {({ active }) => (
                 <Link
-                  className={`${active && 'bg-blue-500'}`}
+                  className={`${active && 'bg-skin-button-accent-hover'} `}
                   href={`/admin/${link.toLowerCase().split(" ").join("_")}`}
                 >
-                    {link}
+                    <span className="text-white cursor-pointer">{link}</span>
                 </Link>
               )}
             </Menu.Item>
