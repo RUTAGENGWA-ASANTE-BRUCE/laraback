@@ -9,6 +9,7 @@ const Home:NextPage= () => {
     <div className="theme-swiss">
         <head>
           <title>Laraback</title>
+          <meta name="verify-admitad" content="6f4e09d182" />
           <link
   rel="stylesheet"
   type="text/css"
