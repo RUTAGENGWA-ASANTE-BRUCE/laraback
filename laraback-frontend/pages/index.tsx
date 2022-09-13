@@ -10,6 +10,7 @@ const Home:NextPage= () => {
         <head>
           <title>Laraback</title>
           <meta name="verify-admitad" content="6f4e09d182" />
+          <meta name="verify-admitad" content="1cb36cb4e0" />
           <link
   rel="stylesheet"
   type="text/css"
