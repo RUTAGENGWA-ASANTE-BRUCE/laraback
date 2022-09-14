@@ -1,12 +1,12 @@
 import {Schema,model,models} from 'mongoose'
 const currency_master_schema =new Schema({
-    "Name":{type:String,default:""},
-  "Iso Code":{type:String,default:""},
-  "Symbol":{type:String,default:""},
-  "Conversion Rate":{type:String,default:""},
-  "Enabled":{type:String,default:""},
-  "Is Primary":{type:String,default:""},
-  "Dispal As":{type:String,default:""},
+    "Name":{type:String,default:null},
+  "Iso Code":{type:String,default:null},
+  "Symbol":{type:String,default:null},
+  "Conversion Rate":{type:String,default:null},
+  "Enabled":{type:String,default:null},
+  "Is Primary":{type:String,default:null},
+  "Dispal As":{type:String,default:null},
 },
 {timestamps:true})
 

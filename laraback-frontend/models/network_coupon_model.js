@@ -1,9 +1,9 @@
 import {Schema,model,models} from 'mongoose'
 const network_coupon_schema =new Schema({
-    "Network Id":{type:String,default:""},
-    "Title":{type:String,default:""},
-    "Initialize":{type:String,default:""},
-    "Exclusive":{type:String,default:""},
+    "Network Id":{type:String,default:null},
+    "Title":{type:String,default:null},
+    "Initialize":{type:String,default:null},
+    "Exclusive":{type:String,default:null},
 },
 {timestamps:true})
 

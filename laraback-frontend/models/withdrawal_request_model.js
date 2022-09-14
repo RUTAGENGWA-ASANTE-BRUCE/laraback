@@ -1,12 +1,12 @@
 import {Schema,model,models} from 'mongoose'
 const withdrawal_request_schema =new Schema({
-    "Payment Id":{type:String,default:""},
-  "User":{type:String,default:""},
-  "Method Code":{type:String,default:""},
-  "Account":{type:String,default:""},
+    "Payment Id":{type:String,default:null},
+  "User":{type:String,default:null},
+  "Method Code":{type:String,default:null},
+  "Account":{type:String,default:null},
   "Amount":{type:Number,default:0},
-  "Status":{type:String,default:""},
-  "Note":{type:String,default:""},
+  "Status":{type:String,default:null},
+  "Note":{type:String,default:null},
 },
 {timestamps:true})
 

@@ -1,10 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 const share_earn_link_schema =new Schema({
-    "User":{type:String,default:""},
-  "Code":{type:String,default:""},
-  "Store":{type:String,default:""},
-  "Clicks":{type:String,default:""},
-  "Earnings":{type:String,default:""},
+    "User":{type:String,default:null},
+  "Code":{type:String,default:null},
+  "Store":{type:String,default:null},
+  "Clicks":{type:String,default:null},
+  "Earnings":{type:String,default:null},
 },
 {timestamps:true})
 

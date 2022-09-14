@@ -1,11 +1,11 @@
 import {Schema,model,models} from 'mongoose'
 const bonus_transaction_schema =new Schema({
-    "User":{type:String,default:""},
-    "Bonus":{type:String,default:""},
+    "User":{type:String,default:null},
+    "Bonus":{type:String,default:null},
     "Amount":{type:Number,default:0},
-    "Awarded On":{type:String,default:""},
-    "Expires On":{type:String,default:""},
-    "Status":{type:String,default:""},
+    "Awarded On":{type:String,default:null},
+    "Expires On":{type:String,default:null},
+    "Status":{type:String,default:null},
 
 },
 {timestamps:true})

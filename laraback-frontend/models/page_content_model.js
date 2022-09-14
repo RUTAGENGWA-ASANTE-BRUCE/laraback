@@ -1,10 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 const page_content_schema =new Schema({
-    "Title":{type:String,default:""},
-    "Slug":{type:String,default:""},
-    "Exclude Sitempa":{type:String,default:""},
-    "Status":{type:String,default:""},
-    "Visits":{type:String,default:""},
+    "Title":{type:String,default:null},
+    "Slug":{type:String,default:null},
+    "Exclude Sitempa":{type:String,default:null},
+    "Status":{type:String,default:null},
+    "Visits":{type:String,default:null},
 },
 {timestamps:true})
 

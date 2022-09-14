@@ -50,7 +50,6 @@ function LanguageButtonsInput({
            name={title}
           className={`${flexRow?'p-1':'p-2'} w-full border-2 border-gray-400  ${flexRow && 'h-9 mt-1'} ${!flexRow && 'rounded-md'} ${flexRow?'':'mt-2'}`}
           placeholder={placeholder}
-          required
         />
       )}
       </div>

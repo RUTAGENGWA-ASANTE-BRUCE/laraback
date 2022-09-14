@@ -1,10 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 const network_api_log_schema =new Schema({
-    "Network":{type:String,default:""},
-    "Endpoint":{type:String,default:""},
-    "Request Method":{type:String,default:""},
-    "Url":{type:String,default:""},
-    "Response Status":{type:String,default:""},
+    "Network":{type:String,default:null},
+    "Endpoint":{type:String,default:null},
+    "Request Method":{type:String,default:null},
+    "Url":{type:String,default:null},
+    "Response Status":{type:String,default:null},
 },
 {timestamps:true})
 

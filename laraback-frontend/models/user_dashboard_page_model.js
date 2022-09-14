@@ -1,10 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 const user_dashboard_page_schema =new Schema({
-    "Module":{type:String,default:""},
-    "title":{type:String,default:""},
-    "Menu Name":{type:String,default:""},
-    "Sort Order":{type:String,default:""},
-    "Enabled":{type:String,default:""},
+    "Module":{type:String,default:null},
+    "title":{type:String,default:null},
+    "Menu Name":{type:String,default:null},
+    "Sort Order":{type:String,default:null},
+    "Enabled":{type:String,default:null},
 },
 {timestamps:true})
 

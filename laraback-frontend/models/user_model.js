@@ -1,7 +1,7 @@
 import {Schema,model,models} from 'mongoose'
 const user_schema =new Schema({
-    "Email":{type:String,default:""},
-    "Password":{type:String,default:""},
+    "Email":{type:String,default:null},
+    "Password":{type:String,default:null},
     "Referral Percent":{default:0,type:Number},
     "Can Share Earn":{default:"yes",type:String},
     "Banned":{default:"no",type:String},

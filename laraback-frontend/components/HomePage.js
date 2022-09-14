@@ -65,6 +65,8 @@ const headings = {
 };
 //
 function HomePage() {
+  const couponAPI="https://couponapi.org/api/getFeed/?API_KEY=b25aab30b721c156359d1d3294865505"
+
   const dispatch = useDispatch();
   const [selectedStoreHeading, setSelectedStoreHeading] = useState(
     headings.store[0]
@@ -82,7 +84,7 @@ function HomePage() {
       await fetch("/api/stores", { method: "GET" })
         .then((res) => res.json())
         .then((data) => setStores(data));
-      await fetch("/api/coupon_&_offers", { method: "GET" })
+      await fetch("/api/coupon_&_offers")
         .then((res) => res.json())
         .then((data) => {
           setCoupons(data);

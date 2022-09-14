@@ -1,14 +1,14 @@
 import {Schema,model,models} from 'mongoose'
 const retailer_to_category_schema =new Schema({
-    "category_url":{type:String,default:""},
-    "description":{type:String,default:""},
-    "meta_description":{type:String,default:""},
-    "meta_keywords":{type:String,default:""},
-    "name":{type:String,default:""},
-    "parent_id":{type:String,default:""},
-    "show_in_menu":{type:String,default:""},
-    "slug":{type:String,default:""},
-    "sort_order":{type:String,default:""},
+    "category_url":{type:String,default:null},
+    "description":{type:String,default:null},
+    "meta_description":{type:String,default:null},
+    "meta_keywords":{type:String,default:null},
+    "name":{type:String,default:null},
+    "parent_id":{type:String,default:null},
+    "show_in_menu":{type:String,default:null},
+    "slug":{type:String,default:null},
+    "sort_order":{type:String,default:null},
 },
 {timestamps:true})
 

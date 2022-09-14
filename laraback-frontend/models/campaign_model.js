@@ -1,10 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 const campaign_schema =new Schema({
-    "Network":{type:String,default:""},
-    "Network Campagin Id":{type:String,default:""},
-    "Campaign Name":{type:String,default:""},
-    "Campaign Status":{type:String,default:""},
-    "Status":{type:String,default:""},
+    "Network":{type:String,default:null},
+    "Network Campagin Id":{type:String,default:null},
+    "Campaign Name":{type:String,default:null},
+    "Campaign Status":{type:String,default:null},
+    "Status":{type:String,default:null},
 },
 {timestamps:true})
 

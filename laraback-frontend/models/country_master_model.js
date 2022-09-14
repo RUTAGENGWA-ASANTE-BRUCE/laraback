@@ -1,10 +1,10 @@
 import {Schema,model,models} from 'mongoose'
 const country_master_schema =new Schema({
-    "Name":{type:String,default:""},
-    "Dial Code":{type:String,default:""},
-    "Code":{type:String,default:""},
-    "Enable OTP":{type:String,default:""},
-    "Enabled":{type:String,default:""},
+    "Name":{type:String,default:null},
+    "Dial Code":{type:String,default:null},
+    "Code":{type:String,default:null},
+    "Enable OTP":{type:String,default:null},
+    "Enabled":{type:String,default:null},
 },
 {timestamps:true})
 

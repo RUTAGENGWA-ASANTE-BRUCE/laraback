@@ -1,8 +1,8 @@
 import {Schema,model,models} from 'mongoose'
 const seo_url_redirect_schema =new Schema({
-    "Old Url":{type:String,default:""},
-    "New Url":{type:String,default:""},
-    "Status":{type:String,default:""},
+    "Old Url":{type:String,default:null},
+    "New Url":{type:String,default:null},
+    "Status":{type:String,default:null},
 },
 {timestamps:true})
 

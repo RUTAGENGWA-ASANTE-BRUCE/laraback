@@ -1,7 +1,7 @@
 import {Schema,model,models} from 'mongoose'
 const store_schema =new Schema({
-  "Title":{type:String,default:""},
-  "Slug":{type:String,default:""},
+  "Title":{type:String,default:null},
+  "Slug":{type:String,default:null},
 },
 {timestamps:true})
 

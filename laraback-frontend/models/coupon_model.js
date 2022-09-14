@@ -1,14 +1,14 @@
 import {Schema,model,models} from 'mongoose'
 const coupon_schema =new Schema({
-    "Title":{type:String,default:""},
-    "Coupon End Date":{type:String,default:""},
-    "Description":{type:String,default:""},
-    "Link":{type:String,default:""},
-    "Store Id":{type:String,default:""},
-    "Code":{type:String,default:""},
-    "Status":{type:String,default:""},
-    "trending_sale":{type:String,default:""},
-    "viewed":{type:String,default:""},
+    "Title":{type:String,default:null},
+    "Coupon End Date":{type:String,default:null},
+    "Description":{type:String,default:null},
+    "Link":{type:String,default:null},
+    "Store Id":{type:String,default:null},
+    "Code":{type:String,default:null},
+    "Status":{type:String,default:null},
+    "trending_sale":{type:String,default:null},
+    "viewed":{type:String,default:null},
 },
 {timestamps:true})
 

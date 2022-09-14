@@ -1,9 +1,9 @@
 import {Schema,model,models} from 'mongoose'
 const language_master_schema =new Schema({
-    "Id":{type:String,default:""},
-    "Name":{type:String,default:""},
-    "Code":{type:String,default:""},
-    "Enabled":{type:String,default:""},
+    "Id":{type:String,default:null},
+    "Name":{type:String,default:null},
+    "Code":{type:String,default:null},
+    "Enabled":{type:String,default:null},
 },
 {timestamps:true})
 

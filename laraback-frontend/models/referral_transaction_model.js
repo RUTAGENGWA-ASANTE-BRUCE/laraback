@@ -1,12 +1,12 @@
 import {Schema,model,models} from 'mongoose'
 const referral_transaction_schema =new Schema({
-    "Sales Id":{type:String,default:""},
-    "User":{type:String,default:""},
-    "Shooper":{type:String,default:""},
-    "Store":{type:String,default:""},
+    "Sales Id":{type:String,default:null},
+    "User":{type:String,default:null},
+    "Shooper":{type:String,default:null},
+    "Store":{type:String,default:null},
     "Referral Amount":{type:Number,default:0},
-    "Currency":{type:String,default:""},
-    "Status":{type:String,default:""},
+    "Currency":{type:String,default:null},
+    "Status":{type:String,default:null},
 
 },
 {timestamps:true})

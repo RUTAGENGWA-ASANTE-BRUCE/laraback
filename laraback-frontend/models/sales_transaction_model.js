@@ -1,12 +1,12 @@
 import {Schema,model,models} from 'mongoose'
 const sales_transaction_schema =new Schema({
-    "Network":{type:String,default:""},
-  "Network Campaign Id":{type:String,default:""},
-  "Sale Date":{type:String,default:""},
+    "Network":{type:String,default:null},
+  "Network Campaign Id":{type:String,default:null},
+  "Sale Date":{type:String,default:null},
   "Commission Amount":{type:Number,default:0},
-  "Currency":{type:String,default:""},
-  "Status":{type:String,default:""},
-  "Aff1 Sub1":{type:String,default:""},
+  "Currency":{type:String,default:null},
+  "Status":{type:String,default:null},
+  "Aff1 Sub1":{type:String,default:null},
 
 },
 {timestamps:true})
