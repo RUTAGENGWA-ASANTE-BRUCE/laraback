@@ -7,7 +7,7 @@ const store_schema =new Schema({
   "Domain Name":{type:String,default:null},
   "DeepLink":{type:String,default:null},
   "Cashback Enabled":{type:String,default:null},
-  "Cashback Percent":{type:String,default:null},
+  "Cashback Percent":{type:Number,default:null},
   "Cashback Type":{type:String,default:null},
   "Tracking Speed":{type:String,default:null},
   "Confirm Duration":{type:String,default:null},
