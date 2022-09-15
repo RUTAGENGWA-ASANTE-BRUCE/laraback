@@ -26,7 +26,8 @@ const affiliate_network_keys = [
   "createdAt",
   "updatedAt",
 ];
-const store_cashback_keys = ["Store", "User Id", "Amount", "Product Id"];
+const store_cashback_keys = ["Store", "User Id", "Amount", "Product Id",  "createdAt",
+"updatedAt",];
 const store_keys = [
   "Name",
   "Slug",
@@ -105,7 +106,8 @@ const page_content_keys = [
   "createdAt",
   "updatedAt",
 ];
-const content_block_keys = ["Name", "Purpose", "Updated At"];
+const content_block_keys = ["Name", "Purpose",  "createdAt",
+"updatedAt",];
 
 const user_dashboard_page_keys = [
   "Module",
@@ -144,7 +146,8 @@ const instaback_offer_keys = [
   "updatedAt",
 ];
 
-const footer_keys = ["Title", "Footer Type", "Sort Order"];
+const footer_keys = ["Title", "Footer Type", "Sort Order",  "createdAt",
+"updatedAt",];
 
 const faq_keys = ["Title", "Category", "Sort Order", "createdAt", "updatedAt"];
 const faq_category_keys = ["Title", "link", "createdAt", "updatedAt"];
@@ -179,6 +182,8 @@ const network_run_keys = [
   "Entries",
   "Start Time",
   "End Time",
+  "createdAt",
+  "updatedAt",
 ];
 const network_coupon_keys = [
   "Network Id",
@@ -221,6 +226,8 @@ const click_log_keys = [
   "User Cashback Id",
   "Ip Address",
   "Http Referrer",
+  "createdAt",
+  "updatedAt",
 ];
 
 const custom_condition_keys = [
@@ -243,6 +250,8 @@ const sales_transaction_keys = [
   "Currency",
   "Status",
   "Aff1 Sub1",
+  "createdAt",
+  "updatedAt",
 ];
 
 const referral_transaction_keys = [
@@ -266,6 +275,8 @@ const cashback_transaction_keys = [
   "Status",
   "Lock Cashback Status",
   "Lock Cashback Amount",
+  "createdAt",
+  "updatedAt",
 ];
 
 const bonus_transaction_keys = [
@@ -332,7 +343,8 @@ const withdrawal_request_keys = [
   "updatedAt",
 ];
 
-const user_favorite_keys = ["Id", "Name", "Users List"];
+const user_favorite_keys = ["Id", "Name", "Users List",  "createdAt",
+"updatedAt",];
 
 const share_earn_link_keys = [
   "User",
