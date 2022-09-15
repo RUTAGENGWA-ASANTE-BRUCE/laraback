@@ -31,8 +31,7 @@ const store_keys = [
   "Name",
   "Slug",
   "Logo",
-  "Homepage",
-  "Domain Name",
+  "Url",
   "DeepLink",
   "Cashback Enabled",
   "Cashback Percent",
@@ -43,17 +42,6 @@ const store_keys = [
   "Is Shearable",
   "Exclude Sitemap",
   "Network",
-  "Network Campaign Id",
-  "Ghost",
-  "H1",
-  "H2",
-  "Meta Title",
-  "Meta Desc",
-  "Meta Kw",
-  "Terms Tod",
-  "Terms Not Todo",
-  "About",
-  "Tips",
   "Visits",
   "createdAt",
   "updatedAt",
@@ -1608,17 +1596,10 @@ function Admin() {
                   type: 4,
                   title: "Logo",
                 },
-                {
-                  type: 2,
-                  title: "Homepage",
-                },
-                {
-                  type: 6,
-                  title: "Domain Name",
-                },
+
                 {
                   type: 5,
-                  title: "Cats",
+                  title: "Url",
                 },
                 {
                   type: 7,
@@ -1665,14 +1646,6 @@ function Admin() {
                   title: "Network",
                 },
                 {
-                  type: 5,
-                  title: "Network Campaign Id",
-                },
-                {
-                  type: 9,
-                  title: "Ghost",
-                },
-                {
                   type: 12,
                   title: "Status",
                   checkBox1: "Publish",
@@ -1681,48 +1654,7 @@ function Admin() {
                 },
               ],
             },
-            {
-              widthPercentage: 47,
-              title: "Additional information",
-              elements: [
-                {
-                  type: 3,
-                  title: "H1",
-                },
-                {
-                  type: 3,
-                  title: "H2",
-                },
-                {
-                  type: 3,
-                  title: "Meta Title",
-                },
-                {
-                  type: 3,
-                  title: "Meta Desc",
-                },
-                {
-                  type: 5,
-                  title: "Meta Kw",
-                },
-                {
-                  type: 8,
-                  title: "Terms Todo",
-                },
-                {
-                  type: 8,
-                  title: "Terms Not Todo",
-                },
-                {
-                  type: 8,
-                  title: "About",
-                },
-                {
-                  type: 8,
-                  title: "Tips",
-                },
-              ],
-            },
+
           ],
         };
         return (
