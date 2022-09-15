@@ -37,7 +37,7 @@ function Store({store}) {
       else{
       const storePostbackUrl=store['Url']
       storePostbackUrl.replace("{USERID}",userData['_id'])
-      router.push(`google.com`)
+      window.href(`google.com`)
       }
     }
   }
