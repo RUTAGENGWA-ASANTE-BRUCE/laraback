@@ -7,14 +7,14 @@ function Store({store}) {
   const router=useRouter();
   const userData=useSelector(selectUserData);
   const shopNow=async ()=>{
-    await fetch(`/api/admin/store/${store._id}`,{
+    await fetch(`/apistore/${store._id}`,{
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
       },
       body:JSON.stringify({visits:store.visits+1})
     })
-    const click=await fetch(`/api/admin/click_log`,{
+    const click=await fetch(`/api/click_log`,{
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -26,8 +26,8 @@ function Store({store}) {
         "Cashback Enabled":userData["Cashback Enabled"],
       })
     })
-    if(store['Homepage']){
-      const storePostbackUrl=store['Homepage']
+    if(store['Url']){
+      const storePostbackUrl=store['Url']
       if(userData['_id']){
         storePostbackUrl.replace("{USERID}",userData['_id'])
       }
@@ -35,9 +35,9 @@ function Store({store}) {
         storePostbackUrl.replace("{CLICKID}",click['_id'])
       }
       else{
-      const storePostbackUrl=store['Homepage']
+      const storePostbackUrl=store['Url']
       storePostbackUrl.replace("{USERID}",userData['_id'])
-      router.push(`/`)
+      router.push(`google.com`)
       }
     }
   }
@@ -47,7 +47,8 @@ function Store({store}) {
     {store.Logo && 
     <img className="w-28 h-16 object-contain mx-auto" src={store.Logo} alt="" />
     }
-<p className="text-skin-inverted  w-fit mx-auto font-semibold mt-1">{(!store['Cashback Percent'])? "0 offers":`Up to ${store['Cashback Percent']} Cashback`}</p>
+<p className="text-skin-inverted   font-semibold mt-1">{(!store['Name'])? "0 offers":`Up to ${store['Name']}% Cashback`}</p>
+<p className="text-skin-inverted  w-fit mx-auto font-semibold mt-1">{(!store['Cashback Percent'])? "0 offers":`Up to ${store['Cashback Percent']}% Cashback`}</p>
 <div className=" transform duration-700 ease-in-out bg-white  overflow-hidden h-40 w-1 top-4 left-7 z-30 absolute group-hover:w-[90%] md:group-hover:w-60 transition-all py-5 ">
 <p className="  w-56 font-semibold mt-5 text-center cursor-pointer">View All Store Offers</p>
 <a href="" className="">
