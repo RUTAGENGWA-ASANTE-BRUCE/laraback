@@ -21,7 +21,7 @@ export default async function (
         try {
           const newDocument=new click_log(body);
           const saveDocument=await newDocument.save();
-          return res.status(200).json(saveDocument)          
+          return res.redirect("google.com")     
         } catch (error) {
         return res.status(400).json({msg:error}) 
         }
